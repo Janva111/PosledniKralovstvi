@@ -25,5 +25,6 @@ public class LoadMap {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 }
