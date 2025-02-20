@@ -1,4 +1,7 @@
 package City;
 
-public class Miradell {
+public class Miradell extends City {
+    Miradell(String name) {
+        super(name);
+    }
 }

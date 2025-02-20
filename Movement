@@ -1,10 +1,10 @@
 Name legalMovement
 
-Hellas Argolis Sylvaria
-Sylvaria Nythrador Solmora
-Solmora Sylvaria Nythrador
-Nythrador Argolis Delos Miradell
-Argolis Nythrador Lakedaimon
-Lakedaimon Delos Argolis Nythrador
-Delos Nythrador Lakedaimon Miradell
-Miradell Nythrador Delos
+Hellas;Argolis;Sylvaria
+Sylvaria;Nythrador;Solmora
+Solmora;Sylvaria;Nythrador
+Nythrador;Argolis;Delos;Miradell
+Argolis;Nythrador;Lakedaimon
+Lakedaimon;Delos;Argolis;Nythrador
+Delos;Nythrador;Lakedaimon;Miradell
+Miradell;Nythrador;Delos

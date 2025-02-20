@@ -1,4 +1,7 @@
 package City;
 
-public class Argolis {
+public class Argolis extends City {
+    Argolis(String name) {
+        super(name);
+    }
 }
