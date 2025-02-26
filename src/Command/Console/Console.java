@@ -55,7 +55,7 @@ public class Console {
             bw.write(command);
             bw.newLine();
         }catch(Exception e){
-
+            System.out.println(e.getMessage());
         }
     }
 }
