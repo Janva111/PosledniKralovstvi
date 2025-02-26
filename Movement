@@ -1,10 +1,8 @@
-Name legalMovement
-
-Hellas;Argolis;Sylvaria
-Sylvaria;Nythrador;Solmora
-Solmora;Sylvaria;Nythrador
-Nythrador;Argolis;Delos;Miradell
-Argolis;Nythrador;Lakedaimon
-Lakedaimon;Delos;Argolis;Nythrador
-Delos;Nythrador;Lakedaimon;Miradell
-Miradell;Nythrador;Delos
+Hellas;0;0;Argolis;Sylvaria;
+Sylvaria;1000;2133;Nythrador;Solmora
+Solmora;1000;1999;Sylvaria;Nythrador
+Nythrador;1000;1999;Argolis;Delos;Miradell
+Argolis;1000;1999;Nythrador;Lakedaimon
+Lakedaimon;1000;1112;Delos;Argolis;Nythrador
+Delos;12323;42141;Nythrador;Lakedaimon;Miradell
+Miradell;14124;4124;Nythrador;Delos

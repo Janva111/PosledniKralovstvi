@@ -1,6 +1,7 @@
 package Command.Console;
 
 import Command.Command;
+import Command.Movement.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -13,7 +14,13 @@ public class Console {
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
     public static String commandList = "commandList.txt";
     public void inicializace(){
-
+        mapOfCommands.put("jdi argolis", new jdiArgolis());
+        mapOfCommands.put("jdi delos", new jdiDelos());
+        mapOfCommands.put("jdi lakedaimon", new jdiLakedaimon());
+        mapOfCommands.put("jdi miradell", new jdiMiradell());
+        mapOfCommands.put("jdi nythrador", new jdiNythrador());
+        mapOfCommands.put("jdi solmora", new jdiSolmora());
+        mapOfCommands.put("jdi sylvaria", new jdiSylvaria());
     }
 
     private Scanner scanner = new Scanner(System.in);
