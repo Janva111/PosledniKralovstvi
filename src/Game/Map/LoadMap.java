@@ -1,6 +1,6 @@
-package Map;
+package Game.Map;
 
-import Map.Citys.*;
+import Game.Map.Citys.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ public class LoadMap {
 
     public boolean loadMap(){
         try{
-            BufferedReader br = new BufferedReader(new FileReader("Movement.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("Map.txt"));
             String line;
             while((line = br.readLine()) != null){
                 String[] split = line.split(";");
@@ -47,7 +47,7 @@ public class LoadMap {
                         Sylvaria sylvaria = new Sylvaria(split[0],Integer.parseInt(split[1]), Integer.parseInt(split[2]),legalCities);
                         cityList.add(sylvaria);
                     default:
-                        System.out.println("Something went wrong with Movement file");
+                        System.out.println("Something went wrong with Map file");
                 }
 
             }

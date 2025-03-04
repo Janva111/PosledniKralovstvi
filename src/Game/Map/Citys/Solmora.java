@@ -1,6 +1,6 @@
-package Map.Citys;
+package Game.Map.Citys;
 
-import Map.City;
+import Game.Map.City;
 
 import java.util.ArrayList;
 
