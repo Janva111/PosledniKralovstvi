@@ -11,19 +11,19 @@ import java.util.HashMap;
 
 public class LoadMap {
 
-    private String start = "Hellas";
     public ArrayList<City> map = new ArrayList<>();
     private HashMap<String, City> cities;
+
 
     public LoadMap() {
         cities = new HashMap<>();
     }
 
-
     public boolean loadMap() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("Cities.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("cities.txt"));
             String line;
+
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
 
@@ -57,14 +57,12 @@ public class LoadMap {
                 }
 
             }
-
-            br.close();
+            return true;
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return false;
     }
 
     private City createCity(String cityName, int strength, int health, ArrayList<String> legalCities) {

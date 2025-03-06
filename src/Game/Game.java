@@ -12,7 +12,6 @@ public class Game {
 
     }
 
-
     public Game(City startingCity){
         this.currentCity = startingCity;
     }
@@ -30,10 +29,20 @@ public class Game {
             return;
         }
         Game game = new Game(startingCity);
-        Movement movement = new Movement();
+        //Movement movement = new Movement();
+
 
 
     }
 
+    public void showAvailableMovements(){
+        System.out.println("Muzes jit:");
+        for (String legalCities : currentCity.getLegalCities()){
+            System.out.println("- "+ legalCities);
+        }
+    }
 
+    public City getCurrentCity() {
+        return currentCity;
+    }
 }

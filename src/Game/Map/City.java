@@ -16,7 +16,20 @@ public class City {
         this.health = health;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public ArrayList<String> getLegalCities() {
+        return legalCities;
+    }
 
+    public int getStrenght() {
+        return strenght;
+    }
+
+    public int getHealth() {
+        return health;
+    }
 }
 
