@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Trader {
     private ArrayList<Items> items = new ArrayList<>();
 
-    public void GenerateItems(){
+    private void GenerateItems(){
 
     }
 
