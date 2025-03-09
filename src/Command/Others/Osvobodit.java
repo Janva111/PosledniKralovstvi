@@ -25,7 +25,7 @@ public class Osvobodit extends Command {
         }else {
             System.out.println("Tuto možnost nelze provést.");
         }
-
+        //
         return "--------------------------------------------------------";
     }
 
