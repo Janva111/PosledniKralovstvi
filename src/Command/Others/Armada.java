@@ -8,7 +8,8 @@ public class Armada extends Command {
     @Override
     public String execute() {
         Army army = new Army();
-        return "Tvoje armada ma tyto staty: " + army.toString();
+        System.out.println("Tvoje armada ma tyto staty: " + army.toString());
+        return "--------------------------------------------------------";
     }
 
     @Override

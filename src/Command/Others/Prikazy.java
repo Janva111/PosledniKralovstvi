@@ -19,7 +19,7 @@ public class Prikazy extends Command {
         } catch (IOException e) {
             System.err.println("Chyba při čtení souboru: " + e.getMessage());
         }
-        return "";
+        return "--------------------------------------------------------";
     }
 
     @Override

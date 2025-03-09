@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Trader {
     private ArrayList<Items> items = new ArrayList<>();
+    private boolean talking = false;
 
     private void GenerateItems(){
 
@@ -16,4 +17,22 @@ public class Trader {
 
     }
 
+    public ArrayList<Items> getItems() {
+        return items;
+    }
+
+    public boolean isTalking() {
+        return talking;
+    }
+
+    public void setTalking(boolean talking) {
+        this.talking = talking;
+    }
+
+    @Override
+    public String toString() {
+        return "Nabidka = {" +
+                "Item = " + items +
+                '}';
+    }
 }

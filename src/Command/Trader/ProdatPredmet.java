@@ -5,7 +5,7 @@ import Command.Command;
 public class ProdatPredmet extends Command {
     @Override
     public String execute() {
-        return "";
+        return "--------------------------------------------------------";
     }
 
     @Override

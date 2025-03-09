@@ -1,10 +1,15 @@
 package Command.Console;
 
 import Command.Command;
+import Command.Inventory.Inventar;
+import Command.Inventory.PouzitElixirOdolnosti;
+import Command.Inventory.PouzitLektvarRozzureni;
+import Command.Inventory.PouzitOzdravovaciTotem;
 import Command.Movement.*;
 import Command.Others.Armada;
 import Command.Others.Prikazy;
 import Command.Others.Ukoncit;
+import Command.Trader.Obchodnik;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -27,6 +32,11 @@ public class Console {
         mapOfCommands.put("armada", new Armada());
         mapOfCommands.put("ukoncit", new Ukoncit());
         mapOfCommands.put("prikazy", new Prikazy());
+        mapOfCommands.put("inventar", new Inventar());
+        mapOfCommands.put("pouzit elixir odolnosti", new PouzitElixirOdolnosti());
+        mapOfCommands.put("pouzit lektvar rozzureni", new PouzitLektvarRozzureni());
+        mapOfCommands.put("pouzit ozdravovaci totem", new PouzitOzdravovaciTotem());
+        mapOfCommands.put("obchodnik", new Obchodnik());
         // add commands
     }
 

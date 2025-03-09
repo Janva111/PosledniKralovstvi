@@ -5,7 +5,8 @@ import Command.Command;
 public class Inventar extends Command {
     @Override
     public String execute() {
-        return "";
+        System.out.println("Toto je tvuj inventar: " + toString());
+        return "--------------------------------------------------------";
     }
 
     @Override
