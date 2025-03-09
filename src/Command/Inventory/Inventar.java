@@ -1,11 +1,16 @@
 package Command.Inventory;
 
 import Command.Command;
+import Game.Inventory;
 
 public class Inventar extends Command {
+    private Inventory inventory;
+    public Inventar(Inventory inventory) {
+        this.inventory = inventory;
+    }
     @Override
     public String execute() {
-        System.out.println("Toto je tvuj inventar: " + toString());
+        System.out.println("Toto je tvuj inventar: " + inventory.toString());
         return "--------------------------------------------------------";
     }
 

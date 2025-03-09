@@ -1,41 +1,46 @@
 package Game;
 
+import Game.Map.City;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Items {
     private String nameOfItem;
     private int price;
-    private String quantity;
+    private String boost;
+    private HashMap<String, Items> items = new HashMap<String, Items>();;
     Random rand = new Random();
 
-
-    public Items(String nameOfItem) {
+    public Items(String nameOfItem, int price) {
         this.nameOfItem = nameOfItem;
-        setPrice();
-        setQuantity();
+        this.price = price;
+        this.boost = boost;
     }
 
-    public String getNameOfItem() {
-        return nameOfItem;
-    }
+    public Items() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("cities.txt"));
+            String line;
 
-    public void setNameOfItem(String nameOfItem) {
-        this.nameOfItem = nameOfItem;
-    }
+            while ((line = br.readLine()) != null) {
+                String[] split = line.split(";");
 
-    public int getPrice() {
-        return price;
-    }
+                // creates items
+                nameOfItem = split[0];
+                price = Integer.parseInt(split[1]);
+                items.put(nameOfItem, new Items(nameOfItem, price));
+            }
 
-    public void setPrice() {
-        this.price = 0;
-    }
-
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity() {
-        this.quantity = "";
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -7,9 +7,13 @@ import Command.Inventory.PouzitLektvarRozzureni;
 import Command.Inventory.PouzitOzdravovaciTotem;
 import Command.Movement.*;
 import Command.Others.Armada;
+import Command.Others.Osvobodit;
 import Command.Others.Prikazy;
 import Command.Others.Ukoncit;
+import Command.Trader.KoupitPredmet;
 import Command.Trader.Obchodnik;
+import Command.Trader.ProdatPredmet;
+import Game.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -18,10 +22,15 @@ import java.util.Scanner;
 
 public class Console {
 
+    private Army army;
+    private Inventory inventory;
+    private Trader trader;
+    private Items items;
+
     private boolean exit = false;
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
     public static String commandList = "commandHistori.txt";
-    public void inicialization(){
+    public void inicialization(Army army, Inventory inventory, Trader trader, Items items, Fight fight) {
         mapOfCommands.put("jdi argolis", new jdiArgolis());
         mapOfCommands.put("jdi delos", new jdiDelos());
         mapOfCommands.put("jdi lakedaimon", new jdiLakedaimon());
@@ -29,14 +38,18 @@ public class Console {
         mapOfCommands.put("jdi nythrador", new jdiNythrador());
         mapOfCommands.put("jdi solmora", new jdiSolmora());
         mapOfCommands.put("jdi sylvaria", new jdiSylvaria());
-        mapOfCommands.put("armada", new Armada());
+        mapOfCommands.put("armada", new Armada(army));
         mapOfCommands.put("ukoncit", new Ukoncit());
         mapOfCommands.put("prikazy", new Prikazy());
-        mapOfCommands.put("inventar", new Inventar());
-        mapOfCommands.put("pouzit elixir odolnosti", new PouzitElixirOdolnosti());
-        mapOfCommands.put("pouzit lektvar rozzureni", new PouzitLektvarRozzureni());
-        mapOfCommands.put("pouzit ozdravovaci totem", new PouzitOzdravovaciTotem());
-        mapOfCommands.put("obchodnik", new Obchodnik());
+        mapOfCommands.put("inventar", new Inventar(inventory));
+        mapOfCommands.put("pouzit elixir odolnosti", new PouzitElixirOdolnosti(army, inventory));
+        mapOfCommands.put("pouzit lektvar rozzureni", new PouzitLektvarRozzureni(army, inventory));
+        mapOfCommands.put("pouzit ozdravovaci totem", new PouzitOzdravovaciTotem(army, inventory));
+        mapOfCommands.put("obchodnik", new Obchodnik(trader));
+        mapOfCommands.put("osvobodit", new Osvobodit(fight,army));
+        mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
+        mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
+
         // add commands
     }
 
@@ -56,8 +69,8 @@ public class Console {
         }
     }
 
-    public void start(){
-        inicialization();
+    public void start(Army army, Inventory inventory, Trader trader, Items items,Fight fight) {
+        inicialization(army,inventory,trader,items,fight);
         try{
             do{
                 make();

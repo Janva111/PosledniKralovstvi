@@ -7,7 +7,6 @@ public class Main {
         Game game = new Game();
         game.startGame();
 
-        Console console = new Console();
-        console.start();
+
     }
 }

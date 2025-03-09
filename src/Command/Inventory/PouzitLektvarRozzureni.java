@@ -5,10 +5,16 @@ import Game.Army;
 import Game.Inventory;
 
 public class PouzitLektvarRozzureni extends Command {
+    private Army army;
+    private Inventory inventory;
+
+    public PouzitLektvarRozzureni(Army army, Inventory inventory) {
+        this.army = army;
+        this.inventory = inventory;
+    }
+
     @Override
     public String execute() {
-        Army army = new Army();
-        Inventory inventory = new Inventory();
         if (inventory.getItemsOwned().contains("LektvarRozzureni")) {
             army.bonusStrenght(1.10);
             inventory.removeItem("LektvarRozzureni");

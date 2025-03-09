@@ -1,5 +1,6 @@
 package Game;
 
+import Command.Console.Console;
 import Game.Map.City;
 import Game.Map.LoadMap;
 
@@ -18,7 +19,11 @@ public class Game {
     public void startGame(){
         LoadMap loadMap = new LoadMap();
         Army army = new Army();
-        if (!loadMap.loadMap()){
+        Inventory inventory = new Inventory();
+        Trader trader = new Trader();
+        Items items = new Items();
+        Fight fight = new Fight();
+       if (!loadMap.loadMap()){
             System.out.println("Load map failed");
             return;
         }
@@ -30,10 +35,9 @@ public class Game {
         }
         Game game = new Game(startingCity);
 
-
         //Movement movement = new Movement();
-
-
+        Console console = new Console();
+        console.start(army, inventory, trader, items, fight);
 
     }
 

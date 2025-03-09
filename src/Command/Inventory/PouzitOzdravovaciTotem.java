@@ -5,10 +5,15 @@ import Game.Army;
 import Game.Inventory;
 
 public class PouzitOzdravovaciTotem extends Command {
+    private Army army;
+    private Inventory inventory;
+
+    public PouzitOzdravovaciTotem(Army army, Inventory inventory) {
+        this.army = army;
+        this.inventory = inventory;
+    }
     @Override
     public String execute() {
-        Army army = new Army();
-        Inventory inventory = new Inventory();
         if (inventory.getItemsOwned().contains("ozdravovaciTotem")) {
             army.healing(500);
             inventory.removeItem("ozdravovaciTotem");
