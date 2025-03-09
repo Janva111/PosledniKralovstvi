@@ -70,8 +70,8 @@ public class Army {
     @Override
     public String toString() {
         return "{" +
-                "síla = " + strenght +
                 ", velikost = " + size +
+                "síla = " + strenght +
                 ", životy = " + health +
                 ", obrana = " + defense +
                 '}';

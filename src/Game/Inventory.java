@@ -11,12 +11,33 @@ public class Inventory {
         itemsOwned = new ArrayList<>();
     }
 
+    // shromazdi vsechny boosty z itemu a vylepsi tim armadu
+    public void useItems() {
+        double strength = 0;
+        double defence = 0;
+        double health = 0;
+        for (int i = 0; i < itemsOwned.size(); i++) {
+            switch (itemsOwned.get(i).getTypeOfBoost()) {
+                case "strenght":
+                    strength += itemsOwned.get(i).getBoost();
+                case "defence":
+                    defence += itemsOwned.get(i).getBoost();
+                case "health":
+                    health += itemsOwned.get(i).getBoost();
+            }
+        }
+
+
+    }
+
     public void addItem(Items item) {
         itemsOwned.add(item);
     }
-
+ // dopsat removeItem a add item
     public void removeItem(String item) {
-        itemsOwned.remove(item);
+        if (itemsOwned.contains(item)) {
+            itemsOwned.remove(item);
+        }
     }
 
     public int getBalance() {

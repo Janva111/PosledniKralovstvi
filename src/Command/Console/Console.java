@@ -1,10 +1,7 @@
 package Command.Console;
 
 import Command.Command;
-import Command.Inventory.Inventar;
-import Command.Inventory.PouzitElixirOdolnosti;
-import Command.Inventory.PouzitLektvarRozzureni;
-import Command.Inventory.PouzitOzdravovaciTotem;
+import Command.Inventory.*;
 import Command.Movement.*;
 import Command.Others.Armada;
 import Command.Others.Osvobodit;
@@ -49,6 +46,7 @@ public class Console {
         mapOfCommands.put("osvobodit", new Osvobodit(fight,army));
         mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
+        mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory));
 
         // add commands
     }

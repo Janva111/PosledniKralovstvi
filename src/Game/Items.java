@@ -13,13 +13,15 @@ import java.util.Random;
 public class Items {
     private String nameOfItem;
     private int price;
-    private String boost;
+    private String typeOfBoost;
+    private double boost;
     private HashMap<String, Items> items = new HashMap<String, Items>();;
     Random rand = new Random();
 
-    public Items(String nameOfItem, int price) {
+    public Items(String nameOfItem, int price, String typeOfBoost, double boost) {
         this.nameOfItem = nameOfItem;
         this.price = price;
+        this.typeOfBoost = typeOfBoost;
         this.boost = boost;
     }
 
@@ -34,7 +36,9 @@ public class Items {
                 // creates items
                 nameOfItem = split[0];
                 price = Integer.parseInt(split[1]);
-                items.put(nameOfItem, new Items(nameOfItem, price));
+                typeOfBoost = split[2];
+                boost = Double.parseDouble(split[3]);
+                items.put(nameOfItem, new Items(nameOfItem, price,typeOfBoost,boost));
             }
 
         } catch (FileNotFoundException e) {
@@ -42,5 +46,45 @@ public class Items {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getNameOfItem() {
+        return nameOfItem;
+    }
+
+    public void setNameOfItem(String nameOfItem) {
+        this.nameOfItem = nameOfItem;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getTypeOfBoost() {
+        return typeOfBoost;
+    }
+
+    public void setTypeOfBoost(String typeOfBoost) {
+        this.typeOfBoost = typeOfBoost;
+    }
+
+    public double getBoost() {
+        return boost;
+    }
+
+    public void setBoost(double boost) {
+        this.boost = boost;
+    }
+
+    public HashMap<String, Items> getItems() {
+        return items;
+    }
+
+    public void setItems(HashMap<String, Items> items) {
+        this.items = items;
     }
 }

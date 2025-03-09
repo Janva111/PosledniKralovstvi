@@ -8,6 +8,15 @@ public class Game {
 
     private City currentCity;
 
+    private LoadMap loadMap = new LoadMap();
+    private Army army;
+    private Inventory inventory;
+    private Trader trader;
+    private Items items;
+    private Fight fight;
+    private Movement movement;
+    private Game game;
+
     public Game(){
 
     }
@@ -17,25 +26,21 @@ public class Game {
     }
 
     public void startGame(){
-        LoadMap loadMap = new LoadMap();
-        Army army = new Army();
-        Inventory inventory = new Inventory();
-        Trader trader = new Trader();
-        Items items = new Items();
-        Fight fight = new Fight();
-       if (!loadMap.loadMap()){
+        this.loadMap = new LoadMap();
+        this.inventory = new Inventory();
+        this.army = new Army();
+        this.items = new Items();
+        this.fight = new Fight();
+        this.trader = new Trader(items);
+        this.game = new Game(loadMap.findCity("hellas"));
+        this.movement = new Movement(game,loadMap);
+
+
+        if (!loadMap.loadMap()){
             System.out.println("Load map failed");
             return;
         }
-        // startovni lokace
-        City startingCity = loadMap.findCity("hellas");
-        if (startingCity == null){
-            System.out.println("Starting city not found");
-            return;
-        }
-        Game game = new Game(startingCity);
 
-        //Movement movement = new Movement();
         Console console = new Console();
         console.start(army, inventory, trader, items, fight);
 
@@ -46,6 +51,10 @@ public class Game {
         for (String legalCities : currentCity.getLegalCities()){
             System.out.println("- "+ legalCities);
         }
+    }
+
+    public void setCurrentCity(City currentCity) {
+        this.currentCity = currentCity;
     }
 
     public City getCurrentCity() {

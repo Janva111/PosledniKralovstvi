@@ -19,3 +19,4 @@ o	prodat predmet – Hráč prodá předmět obchodníkovy buď za peníze nebo 
 o	pouzit ozdravovaci totem – Hráč použije ozdravovaci totem.
 o	pouzit lektvar rozzureni – Hráč použije lektvar rozzuření.
 o	pouzit elixir odolnosti – Hráč použije elixir odolnosti.
+o	pouzit itemy - po kazdém osvobození občanů navrátí boosty armádě.

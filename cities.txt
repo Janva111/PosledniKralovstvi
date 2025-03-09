@@ -1,8 +1,8 @@
-Hellas;1;1;Argolis;Sylvaria;
-Sylvaria;1;2;Nythrador;Solmora
-Solmora;1;2;Sylvaria;Nythrador
-Nythrador;1;1;Argolis;Delos;Miradell
-Argolis;1;1;Nythrador;Lakedaimon
-Lakedaimon;1;1;Delos;Argolis;Nythrador
-Delos;1;1;Nythrador;Lakedaimon;Miradell
-Miradell;1;1;Nythrador;Delos
+Hellas;1;1;true;Argolis;Sylvaria;
+Sylvaria;1;2;false;Nythrador;Solmora
+Solmora;1;2;false;Sylvaria;Nythrador
+Nythrador;1;1;false;Argolis;Delos;Miradell
+Argolis;1;1;false;Nythrador;Lakedaimon
+Lakedaimon;1;1;false;Delos;Argolis;Nythrador
+Delos;1;1;false;Nythrador;Lakedaimon;Miradell
+Miradell;1;1;false;Nythrador;Delos

@@ -6,13 +6,15 @@ public class City {
 
     protected String name;
     protected ArrayList<String> legalCities;
+    protected boolean isTaken;
     protected int strenght;
     protected int health;
 
-    public City(String name, int health, int strenght, ArrayList<String> legalCities) {
+    public City(String name, int health, int strenght, boolean isTaken, ArrayList<String> legalCities) {
         this.name = name;
         this.legalCities = legalCities;
         this.strenght = strenght;
+        this.isTaken = isTaken;
         this.health = health;
     }
 
@@ -30,6 +32,10 @@ public class City {
 
     public int getHealth() {
         return health;
+    }
+
+    public boolean isTaken() {
+        return isTaken;
     }
 }
 

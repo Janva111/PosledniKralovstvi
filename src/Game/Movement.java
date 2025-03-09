@@ -1,5 +1,6 @@
 package Game;
 
+import Game.Map.City;
 import Game.Map.LoadMap;
 
 import java.util.Scanner;
@@ -14,15 +15,43 @@ public class Movement {
     }
 
     public void startMovement() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
 
-        System.out.println("Jsi v meste: " + game.getCurrentCity().getName());
-        System.out.println(game.getCurrentCity().getStrenght());
-        System.out.println(game.getCurrentCity().getHealth());
-        // legal movement
+        do {
+            System.out.println("Jsi v meste: " + game.getCurrentCity().getName());
+            System.out.println(game.getCurrentCity().getStrenght());
+            System.out.println(game.getCurrentCity().getHealth());
+            showAvailableMovements();
 
+            // legal movement
+            System.out.println("Kam máš namířeno? (Napiš pouze jmeno města)");
+            String input = scan.nextLine().toLowerCase().trim();
 
+            City toGo = loadMap.findCity(input);
+            if (toGo == null) {
+                System.out.println("Jdes nekam co neexistuje :(");
+            }else {
+                move(toGo);
+            }
+        }while (flag);
 
     }
 
+    public boolean move(City toGo) {
+        if (game.getCurrentCity().getLegalCities().contains(toGo)) {
+            game.setCurrentCity(toGo);
+            return true;
+        }else {
+            System.out.println("Jdes nekam co neexistuje :(");
+            return false;
+        }
+    }
+
+    public void showAvailableMovements() {
+        System.out.println("Muzes jit:");
+        for (String legalCities : game.getCurrentCity().getLegalCities()){
+            System.out.println("- "+ legalCities);
+        }
+    }
 }

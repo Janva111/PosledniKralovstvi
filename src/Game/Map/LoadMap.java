@@ -31,13 +31,14 @@ public class LoadMap {
                 String cityName = split[0];
                 int strenght = Integer.parseInt(split[1]);
                 int health = Integer.parseInt(split[2]);
+                boolean isTaken = Boolean.parseBoolean(split[3]);
                 ArrayList<String> legalCities = new ArrayList<>();
 
-                for (int i = 3; i < split.length; i++) { // sousedy
+                for (int i = 4; i < split.length; i++) { // sousedy
                     legalCities.add(split[i].trim());
                 }
 
-                City city = createCity(cityName, strenght, health, legalCities);
+                City city = createCity(cityName, strenght, health, isTaken, legalCities);
                 if (city != null) {
                     cities.put(cityName, city);
                     map.add(city);
@@ -65,16 +66,16 @@ public class LoadMap {
         }
     }
 
-    private City createCity(String cityName, int strength, int health, ArrayList<String> legalCities) {
+    private City createCity(String cityName, int strength, int health, boolean isTaken, ArrayList<String> legalCities) {
         switch (cityName.toLowerCase()) {
-            case "hellas": return new Hellas(cityName,strength,health,legalCities);
-            case "argolis":return new Argolis(cityName,strength,health,legalCities);
-            case "delos":return new Delos(cityName,strength,health,legalCities);
-            case "lakedaimon":return new Lakedaimon(cityName,strength,health,legalCities);
-            case "miradell":return new Miradell(cityName,strength,health,legalCities);
-            case "nythrador":return new Nythrador(cityName,strength,health,legalCities);
-            case "solmora":return new Solmora(cityName,strength,health,legalCities);
-            case "sylvaria":return new Sylvaria(cityName,strength,health,legalCities);
+            case "hellas": return new Hellas(cityName,strength,health,isTaken,legalCities);
+            case "argolis":return new Argolis(cityName,strength,health,isTaken,legalCities);
+            case "delos":return new Delos(cityName,strength,health,isTaken,legalCities);
+            case "lakedaimon":return new Lakedaimon(cityName,strength,health,isTaken,legalCities);
+            case "miradell":return new Miradell(cityName,strength,health,isTaken,legalCities);
+            case "nythrador":return new Nythrador(cityName,strength,health,isTaken,legalCities);
+            case "solmora":return new Solmora(cityName,strength,health,isTaken,legalCities);
+            case "sylvaria":return new Sylvaria(cityName,strength,health,isTaken,legalCities);
             default: return null;
         }
     }
