@@ -1,0 +1,21 @@
+o	jdi argolis – Hráč půjde cetou k městu Argolis.
+o	jdi sylvaria – Hráč půjde cetou k městu Sylvaria.
+o	jdi solmora – Hráč půjde cetou k městu Solmora.
+o	jdi lakedaimon – Hráč půjde cetou k městu Lakedaimón.
+o	jdi delos – Hráč půjde cetou k městu Delos.
+o	jdi nythrador – Hráč půjde cetou k městu Nythrador.
+o	jdi miradell – Hráč půjde cetou k městu Miradell.
+o	inventar – Rěkne hráči co má u sebe za předměty.
+o	armada – Ukáže staty celé armády.
+o	prikazy – Vypíše všechny příkazy, které hra obsahuje a co dělají.
+o	pomoc – Zobrazení nápovědy k dostupným příkazům.
+o	ukoncit – Ukončení hry
+o	bojovat – Hráč zahájí boj.
+o	rabovat – Hráč sebere zásoby a předměty od nepřátel.
+o	osvobodit – Hráč osvobodí zajatce, čímž si rozšíří armádu.
+o	obchodnik – Hráč bude schopný nakoupit nové předměty pro jeho armádu
+o	koupit predmet – Hráč koupí předmět u obchodníka.
+o	prodat predmet – Hráč prodá předmět obchodníkovy buď za peníze nebo za vojáky do armády.
+o	pouzit ozdravovaci totem – Hráč použije ozdravovaci totem.
+o	pouzit lektvar rozzureni – Hráč použije lektvar rozzuření.
+o	pouzit elixir odolnosti – Hráč použije elixir odolnosti.

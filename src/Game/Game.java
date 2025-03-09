@@ -9,7 +9,6 @@ public class Game {
 
     public Game(){
 
-
     }
 
     public Game(City startingCity){
@@ -18,6 +17,7 @@ public class Game {
 
     public void startGame(){
         LoadMap loadMap = new LoadMap();
+        Army army = new Army();
         if (!loadMap.loadMap()){
             System.out.println("Load map failed");
             return;
@@ -29,6 +29,8 @@ public class Game {
             return;
         }
         Game game = new Game(startingCity);
+
+
         //Movement movement = new Movement();
 
 

@@ -9,5 +9,11 @@ public class Trader {
 
     }
 
+    public void buy(){
+
+    }
+    public void sell(){
+
+    }
 
 }

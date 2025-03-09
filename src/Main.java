@@ -1,3 +1,4 @@
+import Command.Console.Console;
 import Game.Game;
 
 public class Main {
@@ -5,5 +6,8 @@ public class Main {
         System.out.println("Hello world!");
         Game game = new Game();
         game.startGame();
+
+        Console console = new Console();
+        console.start();
     }
 }

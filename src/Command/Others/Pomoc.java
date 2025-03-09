@@ -1,6 +1,8 @@
-package Command;
+package Command.Others;
 
-public class Pomoc extends Command{
+import Command.Command;
+
+public class Pomoc extends Command {
     @Override
     public String execute() {
         return "";

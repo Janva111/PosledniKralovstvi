@@ -2,6 +2,9 @@ package Command.Console;
 
 import Command.Command;
 import Command.Movement.*;
+import Command.Others.Armada;
+import Command.Others.Prikazy;
+import Command.Others.Ukoncit;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -12,7 +15,7 @@ public class Console {
 
     private boolean exit = false;
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
-    public static String commandList = "commandList.txt";
+    public static String commandList = "commandHistori.txt";
     public void inicialization(){
         mapOfCommands.put("jdi argolis", new jdiArgolis());
         mapOfCommands.put("jdi delos", new jdiDelos());
@@ -21,6 +24,9 @@ public class Console {
         mapOfCommands.put("jdi nythrador", new jdiNythrador());
         mapOfCommands.put("jdi solmora", new jdiSolmora());
         mapOfCommands.put("jdi sylvaria", new jdiSylvaria());
+        mapOfCommands.put("armada", new Armada());
+        mapOfCommands.put("ukoncit", new Ukoncit());
+        mapOfCommands.put("prikazy", new Prikazy());
         // add commands
     }
 
