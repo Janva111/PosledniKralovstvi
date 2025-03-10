@@ -8,3 +8,18 @@ pohyb
 pohyb
 pohyb
 pohyb
+armada
+prikazy
+inventar
+obchodnik
+osvobodit
+armada
+pouzit itemy
+pohyb
+pohyb
+pohyb
+pohyb
+pohyb
+delos
+ukoncitr
+ukoncit
