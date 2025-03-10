@@ -14,7 +14,8 @@ public class Items {
     private int price;
     private String typeOfBoost;
     private int boost;
-    private HashMap<String, Items> items = new HashMap<String, Items>();;
+    private HashMap<String, Items> items = new HashMap<String, Items>();
+    ;
     Random rand = new Random();
 
     public Items(String nameOfItem, int price, String typeOfBoost, int boost) {
@@ -37,7 +38,7 @@ public class Items {
                 price = Integer.parseInt(split[1]);
                 typeOfBoost = split[2];
                 boost = Integer.parseInt(split[3]);
-                items.put(nameOfItem, new Items(nameOfItem, price,typeOfBoost,boost));
+                items.put(nameOfItem, new Items(nameOfItem, price, typeOfBoost, boost));
             }
 
         } catch (FileNotFoundException e) {

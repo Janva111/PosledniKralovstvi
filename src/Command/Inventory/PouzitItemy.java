@@ -4,10 +4,12 @@ import Command.Command;
 import Game.Inventory;
 
 public class PouzitItemy extends Command {
-    private Inventory inventory;
+    private static Inventory inventory;
+
     public PouzitItemy(Inventory inventory) {
         this.inventory = inventory;
     }
+
     @Override
     public String execute() {
         inventory.useItems();

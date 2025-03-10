@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 public class Trader {
     private ArrayList<Items> items = new ArrayList<>();
-    private Items item;
+    private static Items item;
     private boolean talking = false;
 
     public Trader(Items item) {
         this.item = item;
     }
 
-    private void GenerateItems(){
+    private void GenerateItems() {
 
     }
 
-    public void buy(){
+    public void buy() {
 
     }
-    public void sell(){
+
+    public void sell() {
 
     }
 

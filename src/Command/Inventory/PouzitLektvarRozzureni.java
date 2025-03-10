@@ -5,8 +5,8 @@ import Game.Army;
 import Game.Inventory;
 
 public class PouzitLektvarRozzureni extends Command {
-    private Army army;
-    private Inventory inventory;
+    private static Army army;
+    private static Inventory inventory;
 
     public PouzitLektvarRozzureni(Army army, Inventory inventory) {
         this.army = army;
@@ -19,7 +19,7 @@ public class PouzitLektvarRozzureni extends Command {
             army.bonusStrenght(1.10);
             inventory.removeItem("LektvarRozzureni");
             System.out.println("Lektvar Rozzureni byl pouzit");
-        }else {
+        } else {
             System.out.println("Lektvar Rozzureni neni v tvem inventari");
         }
         return "--------------------------------------------------------";

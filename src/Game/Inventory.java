@@ -20,13 +20,13 @@ public class Inventory {
             switch (itemsOwned.get(i).getTypeOfBoost()) {
                 case "strenght":
                     strength += itemsOwned.get(i).getBoost();
-                    strength = (strength+100) / 100;
+                    strength = (strength + 100) / 100;
                 case "defence":
                     defence += itemsOwned.get(i).getBoost();
-                    defence = (defence+100) / 100;
+                    defence = (defence + 100) / 100;
                 case "health":
                     health += itemsOwned.get(i).getBoost();
-                    health = (health+100) / 100;
+                    health = (health + 100) / 100;
             }
         }
 
@@ -36,7 +36,8 @@ public class Inventory {
     public void addItem(Items item) {
         itemsOwned.add(item);
     }
- // dopsat removeItem a add item
+
+    // dopsat removeItem a add item
     public void removeItem(String item) {
         if (itemsOwned.contains(item)) {
             itemsOwned.remove(item);

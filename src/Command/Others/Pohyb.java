@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Pohyb extends Command {
 
-    private Game game;
-    private LoadMap loadMap;
+    private static Game game;
+    private static LoadMap loadMap;
     private boolean firstMove = true;
 
     public Pohyb(Game game, LoadMap loadMap) {
@@ -28,7 +28,7 @@ public class Pohyb extends Command {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Právě si ve městě: " + game.getCurrentCity().getName());
             System.out.println("Počet životů nepřátelské armády: " + game.getCurrentCity().getHealth());
-            System.out.println("Síla nepřátelské armády" +  game.getCurrentCity().getStrenght());
+            System.out.println("Síla nepřátelské armády" + game.getCurrentCity().getStrenght());
             game.showAvailableMovements();
 
             System.out.print("Kam si přeješ dále pokračovat? (napiš název lokace): ");
@@ -39,7 +39,7 @@ public class Pohyb extends Command {
                 return "Tato lokace neexistuje!";
             }
 
-            if (game.move(toGo)) {
+            if (game.move(toGo) == true) {
                 firstMove = false;
                 System.out.println("Právě ses vypravil do města " + toGo.getName());
                 System.out.println("Uspěšně si dorazil do města " + toGo.getName());

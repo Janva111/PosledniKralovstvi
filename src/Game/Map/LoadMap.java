@@ -68,15 +68,24 @@ public class LoadMap {
 
     private City createCity(String cityName, int strength, int health, boolean isTaken, ArrayList<String> legalCities) {
         switch (cityName.toLowerCase()) {
-            case "hellas": return new Hellas(cityName,strength,health,isTaken,legalCities);
-            case "argolis":return new Argolis(cityName,strength,health,isTaken,legalCities);
-            case "delos":return new Delos(cityName,strength,health,isTaken,legalCities);
-            case "lakedaimon":return new Lakedaimon(cityName,strength,health,isTaken,legalCities);
-            case "miradell":return new Miradell(cityName,strength,health,isTaken,legalCities);
-            case "nythrador":return new Nythrador(cityName,strength,health,isTaken,legalCities);
-            case "solmora":return new Solmora(cityName,strength,health,isTaken,legalCities);
-            case "sylvaria":return new Sylvaria(cityName,strength,health,isTaken,legalCities);
-            default: return null;
+            case "hellas":
+                return new Hellas(cityName, strength, health, isTaken, legalCities);
+            case "argolis":
+                return new Argolis(cityName, strength, health, isTaken, legalCities);
+            case "delos":
+                return new Delos(cityName, strength, health, isTaken, legalCities);
+            case "lakedaimon":
+                return new Lakedaimon(cityName, strength, health, isTaken, legalCities);
+            case "miradell":
+                return new Miradell(cityName, strength, health, isTaken, legalCities);
+            case "nythrador":
+                return new Nythrador(cityName, strength, health, isTaken, legalCities);
+            case "solmora":
+                return new Solmora(cityName, strength, health, isTaken, legalCities);
+            case "sylvaria":
+                return new Sylvaria(cityName, strength, health, isTaken, legalCities);
+            default:
+                return null;
         }
     }
 

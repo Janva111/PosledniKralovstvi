@@ -5,8 +5,8 @@ import Game.Inventory;
 import Game.Trader;
 
 public class ProdatPredmet extends Command {
-    Trader trader;
-    Inventory inventory;
+    private static Trader trader;
+    private static Inventory inventory;
 
     public ProdatPredmet(Trader trader, Inventory inventory) {
         this.trader = trader;

@@ -38,7 +38,7 @@ public class Army {
     // setters
 
     public void setStrenght() {
-        this.strenght = size*10;
+        this.strenght = size * 10;
     }
 
     public void setHealth() {

@@ -18,7 +18,7 @@ public class City {
         this.health = health;
     }
 
-    public boolean canMoveTo(String goTo){
+    public boolean canMoveTo(String goTo) {
         return legalCities.contains(goTo);
     }
 

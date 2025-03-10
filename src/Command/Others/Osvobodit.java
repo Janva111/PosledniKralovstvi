@@ -2,22 +2,23 @@ package Command.Others;
 
 import Command.Command;
 import Game.Army;
-import Game.Fight;
+import Game.Game;
 
 import java.util.Random;
 
 public class Osvobodit extends Command {
 
-    Fight fight;
-    Army army;
-    public Osvobodit(Fight fight, Army army) {
-        this.fight = fight;
+    private static Game game;
+    private static Army army;
+
+    public Osvobodit(Game game, Army army) {
+        this.game = game;
         this.army = army;
     }
 
     @Override
     public String execute() {
-        if (fight.fight()){
+        if (game.getCurrentCity().isTaken() == true) {
             Random rand = new Random();
             int size = rand.nextInt(100) + 100;
             army.biggerSize(size);
@@ -25,8 +26,8 @@ public class Osvobodit extends Command {
             army.setHealth();
             army.setStrenght();
             System.out.println("Osvobodil si " + size + " zajatých občanů země Valtheris.");
-        }else {
-            System.out.println("Tuto možnost nelze provést.");
+        } else {
+            System.out.println("Tuto možnost nelze provést. Město není obdazeno.");
         }
         return "--------------------------------------------------------";
     }
