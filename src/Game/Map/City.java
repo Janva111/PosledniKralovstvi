@@ -18,6 +18,10 @@ public class City {
         this.health = health;
     }
 
+    public boolean canMoveTo(String goTo){
+        return legalCities.contains(goTo);
+    }
+
     public String getName() {
         return name;
     }
@@ -37,5 +41,7 @@ public class City {
     public boolean isTaken() {
         return isTaken;
     }
+
+
 }
 

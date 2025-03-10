@@ -2,8 +2,8 @@ package Command.Console;
 
 import Command.Command;
 import Command.Inventory.*;
-import Command.Movement.*;
 import Command.Others.Armada;
+import Command.Others.Pohyb;
 import Command.Others.Osvobodit;
 import Command.Others.Prikazy;
 import Command.Others.Ukoncit;
@@ -11,6 +11,7 @@ import Command.Trader.KoupitPredmet;
 import Command.Trader.Obchodnik;
 import Command.Trader.ProdatPredmet;
 import Game.*;
+import Game.Map.LoadMap;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -23,18 +24,14 @@ public class Console {
     private Inventory inventory;
     private Trader trader;
     private Items items;
+    private Game game;
+    private LoadMap loadMap;
 
     private boolean exit = false;
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
     public static String commandList = "commandHistori.txt";
-    public void inicialization(Army army, Inventory inventory, Trader trader, Items items, Fight fight) {
-        mapOfCommands.put("jdi argolis", new jdiArgolis());
-        mapOfCommands.put("jdi delos", new jdiDelos());
-        mapOfCommands.put("jdi lakedaimon", new jdiLakedaimon());
-        mapOfCommands.put("jdi miradell", new jdiMiradell());
-        mapOfCommands.put("jdi nythrador", new jdiNythrador());
-        mapOfCommands.put("jdi solmora", new jdiSolmora());
-        mapOfCommands.put("jdi sylvaria", new jdiSylvaria());
+    public void inicialization(Army army, Inventory inventory, Trader trader, Items items, Fight fight, Game game, LoadMap loadMap) {
+        mapOfCommands.put("pohyb",new Pohyb(game, loadMap));
         mapOfCommands.put("armada", new Armada(army));
         mapOfCommands.put("ukoncit", new Ukoncit());
         mapOfCommands.put("prikazy", new Prikazy());
@@ -67,8 +64,8 @@ public class Console {
         }
     }
 
-    public void start(Army army, Inventory inventory, Trader trader, Items items,Fight fight) {
-        inicialization(army,inventory,trader,items,fight);
+    public void start(Army army, Inventory inventory, Trader trader, Items items,Fight fight, Game game, LoadMap loadMap) {
+        inicialization(army,inventory,trader,items,fight, game, loadMap);
         try{
             do{
                 make();

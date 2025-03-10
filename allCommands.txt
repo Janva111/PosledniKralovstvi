@@ -1,10 +1,4 @@
-o	jdi argolis – Hráč půjde cetou k městu Argolis.
-o	jdi sylvaria – Hráč půjde cetou k městu Sylvaria.
-o	jdi solmora – Hráč půjde cetou k městu Solmora.
-o	jdi lakedaimon – Hráč půjde cetou k městu Lakedaimón.
-o	jdi delos – Hráč půjde cetou k městu Delos.
-o	jdi nythrador – Hráč půjde cetou k městu Nythrador.
-o	jdi miradell – Hráč půjde cetou k městu Miradell.
+o	pohyb - Hráči se objeví možnost do jakého města chce pokračovat.
 o	inventar – Rěkne hráči co má u sebe za předměty.
 o	armada – Ukáže staty celé armády.
 o	prikazy – Vypíše všechny příkazy, které hra obsahuje a co dělají.

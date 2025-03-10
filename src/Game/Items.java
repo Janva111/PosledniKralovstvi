@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -37,7 +36,7 @@ public class Items {
                 nameOfItem = split[0];
                 price = Integer.parseInt(split[1]);
                 typeOfBoost = split[2];
-                boost = Double.parseDouble(split[3]);
+                //boost = Double.parseDouble(split[3]);
                 items.put(nameOfItem, new Items(nameOfItem, price,typeOfBoost,boost));
             }
 

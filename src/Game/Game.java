@@ -14,7 +14,6 @@ public class Game {
     private Trader trader;
     private Items items;
     private Fight fight;
-    private Movement movement;
     private Game game;
 
     public Game(){
@@ -32,8 +31,6 @@ public class Game {
         this.items = new Items();
         this.fight = new Fight();
         this.trader = new Trader(items);
-        this.game = new Game(loadMap.findCity("hellas"));
-        this.movement = new Movement(game,loadMap);
 
 
         if (!loadMap.loadMap()){
@@ -41,8 +38,14 @@ public class Game {
             return;
         }
 
+        City startLocation = loadMap.findCity("hellas");
+        if (startLocation == null) {
+            System.out.println("Startovní lokace nebyla nalezena!");
+            return;
+        }
+        this.game = new Game(startLocation);
         Console console = new Console();
-        console.start(army, inventory, trader, items, fight);
+        console.start(army, inventory, trader, items, fight, game,loadMap);
 
     }
 
@@ -52,6 +55,19 @@ public class Game {
             System.out.println("- "+ legalCities);
         }
     }
+
+    public boolean move(City toGo) {
+        if (currentCity.canMoveTo(toGo.getName())) {
+            currentCity = toGo;
+            return true;
+        }else {
+            System.out.println("Jdes nekam co neexistuje :(");
+            return false;
+        }
+    }
+
+
+
 
     public void setCurrentCity(City currentCity) {
         this.currentCity = currentCity;
