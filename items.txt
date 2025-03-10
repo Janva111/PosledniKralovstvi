@@ -1,0 +1,8 @@
+mec;100;strenght;1
+kopi;200;strenght;2
+stit;100;defence;5
+brneni;300;health;2
+katapult;1000;stenght;12
+ozivovaciTotem;400;potion;0
+lektvarRozzureni;500;potion;0
+elixirOdolnosti;600;potion;0

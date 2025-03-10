@@ -13,11 +13,11 @@ public class Items {
     private String nameOfItem;
     private int price;
     private String typeOfBoost;
-    private double boost;
+    private int boost;
     private HashMap<String, Items> items = new HashMap<String, Items>();;
     Random rand = new Random();
 
-    public Items(String nameOfItem, int price, String typeOfBoost, double boost) {
+    public Items(String nameOfItem, int price, String typeOfBoost, int boost) {
         this.nameOfItem = nameOfItem;
         this.price = price;
         this.typeOfBoost = typeOfBoost;
@@ -26,7 +26,7 @@ public class Items {
 
     public Items() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("cities.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("items.txt"));
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -36,7 +36,7 @@ public class Items {
                 nameOfItem = split[0];
                 price = Integer.parseInt(split[1]);
                 typeOfBoost = split[2];
-                //boost = Double.parseDouble(split[3]);
+                boost = Integer.parseInt(split[3]);
                 items.put(nameOfItem, new Items(nameOfItem, price,typeOfBoost,boost));
             }
 
@@ -71,11 +71,11 @@ public class Items {
         this.typeOfBoost = typeOfBoost;
     }
 
-    public double getBoost() {
+    public int getBoost() {
         return boost;
     }
 
-    public void setBoost(double boost) {
+    public void setBoost(int boost) {
         this.boost = boost;
     }
 
