@@ -27,7 +27,7 @@ public class Osvobodit extends Command {
             army.setStrenght();
             System.out.println("Osvobodil si " + size + " zajatých občanů země Valtheris.");
         } else {
-            System.out.println("Tuto možnost nelze provést. Město není obdazeno.");
+            System.out.println("Tuto možnost nelze provést. Město není obsazeno.");
         }
         return "--------------------------------------------------------";
     }

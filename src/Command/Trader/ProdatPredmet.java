@@ -15,6 +15,11 @@ public class ProdatPredmet extends Command {
 
     @Override
     public String execute() {
+        if (trader.isTalking() == true){
+
+        }else {
+            System.out.println("Tuto možnost nelze provést. Nejsi u obchodníka.");
+        }
         return "--------------------------------------------------------";
     }
 

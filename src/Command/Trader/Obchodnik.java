@@ -19,7 +19,7 @@ public class Obchodnik extends Command {
             trader.setTalking(true);
             System.out.println("Vítej u obchodníka, zde můžeš vydět jeho nabídku: " + trader.toString());
         } else {
-            System.out.println("Tuto možnost nelze provést. Město není obdazeno.");
+            System.out.println("Tuto možnost nelze provést. Město není obsazeno.");
         }
         return "--------------------------------------------------------";
     }

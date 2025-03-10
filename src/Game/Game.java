@@ -33,10 +33,12 @@ public class Game {
         this.fight = new Fight();
         this.trader = new Trader(items);
 
+        // startovni text
         System.out.println("Vítej ve hře POSLEDNÍ KRÁLOVSTVÍ" + "\n" + "Tvím cílem je se dostat do města Miradell, kde musíš zastavit temného lorda Cassiusa." + "\n" + "Na tvé cestě ti bude nápomocná tvá armáda." + "\n" + "Jsi připraven jako věrný bojovník Cairbr navrátit mír zemi Valtheris?");
         System.out.println("Zde máš menší radu na začátek.");
         Prikazy prikazy = new Prikazy();
-
+        prikazy.execute();
+        System.out.println("--------------------------------------------------------");
 
         if (!loadMap.loadMap()) {
             System.out.println("Load map failed");
