@@ -10,7 +10,6 @@ import java.io.IOException;
 public class Prikazy extends Command {
     @Override
     public String execute() {
-        System.out.println("Prikazy a vysvetlivky: ");
         try (BufferedReader br = new BufferedReader(new FileReader("allCommands.txt"))) {
             String line;
             while ((line = br.readLine()) != null) { // Čte řádek po řádku

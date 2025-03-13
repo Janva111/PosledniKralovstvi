@@ -6,13 +6,15 @@ public class Inventory {
     private int balance;
     private ArrayList<Items> itemsOwned;
 
+
+
     public Inventory() {
         this.balance = 0;
         itemsOwned = new ArrayList<>();
     }
 
     // shromazdi vsechny boosty z itemu a vylepsi tim armadu
-    public void useItems() {
+    public void useItems(Army army) {
         double strength = 0;
         double defence = 0;
         double health = 0;
@@ -21,12 +23,15 @@ public class Inventory {
                 case "strenght":
                     strength += itemsOwned.get(i).getBoost();
                     strength = (strength + 100) / 100;
+                    army.bonusStrenght(strength);
                 case "defence":
                     defence += itemsOwned.get(i).getBoost();
                     defence = (defence + 100) / 100;
+                    army.bonusDefense(defence);
                 case "health":
                     health += itemsOwned.get(i).getBoost();
                     health = (health + 100) / 100;
+                    army.bonusMaxHealth(health);
             }
         }
 

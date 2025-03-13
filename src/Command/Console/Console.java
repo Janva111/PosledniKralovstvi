@@ -4,7 +4,8 @@ import Command.Command;
 import Command.Inventory.*;
 import Command.Others.*;
 import Command.Trader.KoupitPredmet;
-import Command.Trader.Obchodnik;
+import Command.Trader.MluvitSObchodnikem;
+import Command.Trader.OdejitOdObchodnika;
 import Command.Trader.ProdatPredmet;
 import Game.*;
 import Game.Map.LoadMap;
@@ -36,11 +37,12 @@ public class Console {
         mapOfCommands.put("pouzit elixir odolnosti", new PouzitElixirOdolnosti(army, inventory));
         mapOfCommands.put("pouzit lektvar rozzureni", new PouzitLektvarRozzureni(army, inventory));
         mapOfCommands.put("pouzit ozdravovaci totem", new PouzitOzdravovaciTotem(army, inventory));
-        mapOfCommands.put("obchodnik", new Obchodnik(trader, game));
+        mapOfCommands.put("mluvit s obchodnikem", new MluvitSObchodnikem(trader, game));
+        mapOfCommands.put("odejit od obchodnika", new OdejitOdObchodnika(trader));
         mapOfCommands.put("osvobodit", new Osvobodit(game, army));
         mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
-        mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory));
+        mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory,army));
         mapOfCommands.put("pomoc", new Pomoc(game));
 
         // add commands

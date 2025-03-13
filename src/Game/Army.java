@@ -9,9 +9,10 @@ public class Army {
     private double strenght;
 
     public Army() {
-        setHealth();
+        setMaxHealthHealth();
         setDefense();
         setStrenght();
+        this.health = maxHealth;
     }
 
     // upgrades
@@ -30,6 +31,9 @@ public class Army {
     public void bonusStrenght(double multiplier) {
         strenght = strenght * multiplier;
     }
+    public void bonusMaxHealth(double multiplier) {
+        maxHealth = maxHealth * multiplier;
+    }
 
     public void biggerSize(int add) {
         size = size + add;
@@ -41,9 +45,12 @@ public class Army {
         this.strenght = size * 10;
     }
 
-    public void setHealth() {
-        this.health = size * 15;
+    public void setMaxHealthHealth() {
         this.maxHealth = size * 15;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
     }
 
     public void setDefense() {
@@ -57,6 +64,10 @@ public class Army {
 
     public int getSize() {
         return size;
+    }
+
+    public double getMaxHealth() {
+        return maxHealth;
     }
 
     public double getHealth() {

@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -15,6 +16,7 @@ public class Items {
     private String typeOfBoost;
     private int boost;
     private HashMap<String, Items> items = new HashMap<String, Items>();
+    private ArrayList<Items> itemsList = new ArrayList<Items>();
     ;
     Random rand = new Random();
 
@@ -38,7 +40,12 @@ public class Items {
                 price = Integer.parseInt(split[1]);
                 typeOfBoost = split[2];
                 boost = Integer.parseInt(split[3]);
-                items.put(nameOfItem, new Items(nameOfItem, price, typeOfBoost, boost));
+
+                Items loadedItem = new Items(nameOfItem, price, typeOfBoost, boost);
+                if (loadedItem!= null) {
+                    items.put(nameOfItem, loadedItem);
+                    itemsList.add(loadedItem);
+                }
             }
 
         } catch (FileNotFoundException e) {
@@ -47,6 +54,16 @@ public class Items {
             throw new RuntimeException(e);
         }
     }
+
+    public Items findItem(String itemName) {
+            for (Items items : itemsList) {
+                if (items.getNameOfItem().equalsIgnoreCase(itemName)) {
+                    return items;
+                }
+            }
+            return null;
+        }
+
 
     public String getNameOfItem() {
         return nameOfItem;
@@ -86,5 +103,15 @@ public class Items {
 
     public void setItems(HashMap<String, Items> items) {
         this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return "\n"+"Item{" +
+                "Název itemu = '" + nameOfItem + '\'' +
+                ", Cena = " + price +
+                ", Typ boostu = '" + typeOfBoost + '\'' +
+                ", Hodnota boostu = " + boost + "%" +
+                "}" ;
     }
 }

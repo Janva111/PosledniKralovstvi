@@ -1,3 +1,8 @@
+Tvím cílem je se dostat do města Miradell, kde musíš zastavit temného lorda Cassiusa.
+Na tvé cestě ti bude nápomocná tvá armáda.
+Jsi připraven jako věrný bojovník Cairbr navrátit mír zemi Valtheris?
+--------------------------------------------------------
+Zde máš meší radu ohledně příkazů.
 o	pohyb - Hráči se objeví možnost do jakého města chce pokračovat.
 o	inventar – Rěkne hráči co má u sebe za předměty.
 o	armada – Ukáže staty celé armády.
@@ -7,7 +12,8 @@ o	ukoncit – Ukončení hry
 o	bojovat – Hráč zahájí boj.
 o	rabovat – Hráč sebere zásoby a předměty od nepřátel.
 o	osvobodit – Hráč osvobodí zajatce, čímž si rozšíří armádu.
-o	obchodnik – Hráč bude schopný nakoupit nové předměty pro jeho armádu
+o	mluvit s obchodnikem – Hráč bude schopný nakoupit nové předměty pro jeho armádu, pouze tehdy, když bude v neobsazeném městě.
+o	odejit od obchodnika – Hráč opustí obchodníka a vrátí se na svou cestu;
 o	koupit predmet – Hráč koupí předmět u obchodníka.
 o	prodat predmet – Hráč prodá předmět obchodníkovy buď za peníze nebo za vojáky do armády.
 o	pouzit ozdravovaci totem – Hráč použije ozdravovaci totem.

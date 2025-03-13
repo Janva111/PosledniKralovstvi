@@ -34,8 +34,8 @@ public class Game {
         this.trader = new Trader(items);
 
         // startovni text
-        System.out.println("Vítej ve hře POSLEDNÍ KRÁLOVSTVÍ" + "\n" + "Tvím cílem je se dostat do města Miradell, kde musíš zastavit temného lorda Cassiusa." + "\n" + "Na tvé cestě ti bude nápomocná tvá armáda." + "\n" + "Jsi připraven jako věrný bojovník Cairbr navrátit mír zemi Valtheris?");
-        System.out.println("Zde máš menší radu na začátek.");
+        System.out.println("Vítej ve hře POSLEDNÍ KRÁLOVSTVÍ");
+        System.out.println("--------------------------------------------------------");
         Prikazy prikazy = new Prikazy();
         prikazy.execute();
         System.out.println("--------------------------------------------------------");
@@ -45,6 +45,17 @@ public class Game {
             return;
         }
 
+          /*  if (loadMap.findCity("miradell").isTaken() == true) {
+                System.out.println("Uspěšně se ti podařilo sjednotit zemi Valtheris." + "\n" +
+                        "Tůj lid je na tebe pišný a celá země slaví." + "\n" +
+                        "Dobrá práce, už si jen užij svou slávu.");
+                System.exit(0);
+            }
+
+           */
+
+
+
         City startLocation = loadMap.findCity("hellas");
         if (startLocation == null) {
             System.out.println("Startovní lokace nebyla nalezena!");
@@ -53,7 +64,6 @@ public class Game {
         this.game = new Game(startLocation);
         Console console = new Console();
         console.start(army, inventory, trader, items, fight, game, loadMap);
-
     }
 
     public void showAvailableMovements() {
