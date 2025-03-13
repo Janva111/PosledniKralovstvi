@@ -24,9 +24,6 @@ public class Bojovat extends Command {
 
 
 
-
-
-
         }else{
             System.out.println("Není pořeba bojovat ve městě, které jsi již osvobodil.");
         }

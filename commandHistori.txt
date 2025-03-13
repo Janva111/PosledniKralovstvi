@@ -33,3 +33,5 @@ pohyb
 pohyb
 obchodnik
 mluvit s obchodnikem
+pohyb
+pohyb

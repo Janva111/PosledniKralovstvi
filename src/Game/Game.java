@@ -14,7 +14,6 @@ public class Game {
     private Inventory inventory;
     private Trader trader;
     private Items items;
-    private Fight fight;
     private Game game;
 
     public Game() {
@@ -30,7 +29,6 @@ public class Game {
         this.inventory = new Inventory();
         this.army = new Army();
         this.items = new Items();
-        this.fight = new Fight();
         this.trader = new Trader(items);
 
         // startovni text
@@ -63,7 +61,7 @@ public class Game {
         }
         this.game = new Game(startLocation);
         Console console = new Console();
-        console.start(army, inventory, trader, items, fight, game, loadMap);
+        console.start(army, inventory, trader, items, game, loadMap);
     }
 
     public void showAvailableMovements() {

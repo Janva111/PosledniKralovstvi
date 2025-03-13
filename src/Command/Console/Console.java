@@ -28,7 +28,7 @@ public class Console {
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
     public static String commandList = "commandHistori.txt";
 
-    public void inicialization(Army army, Inventory inventory, Trader trader, Items items, Fight fight, Game game, LoadMap loadMap) {
+    public void inicialization(Army army, Inventory inventory, Trader trader, Items items, Game game, LoadMap loadMap) {
         mapOfCommands.put("pohyb", new Pohyb(game, loadMap));
         mapOfCommands.put("armada", new Armada(army));
         mapOfCommands.put("ukoncit", new Ukoncit());
@@ -44,6 +44,7 @@ public class Console {
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
         mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory,army));
         mapOfCommands.put("pomoc", new Pomoc(game));
+        mapOfCommands.put("rabovat", new Rabovat(game,inventory));
 
         // add commands
     }
@@ -64,8 +65,8 @@ public class Console {
         }
     }
 
-    public void start(Army army, Inventory inventory, Trader trader, Items items, Fight fight, Game game, LoadMap loadMap) {
-        inicialization(army, inventory, trader, items, fight, game, loadMap);
+    public void start(Army army, Inventory inventory, Trader trader, Items items, Game game, LoadMap loadMap) {
+        inicialization(army, inventory, trader, items, game, loadMap);
         try {
             do {
                 make();
