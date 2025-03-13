@@ -98,4 +98,11 @@ public class LoadMap {
         return null;
     }
 
+    public HashMap<String, City> getCities() {
+        return cities;
+    }
+
+    public void setCities(HashMap<String, City> cities) {
+        this.cities = cities;
+    }
 }

@@ -3,6 +3,7 @@ package Command.Inventory;
 import Command.Command;
 import Game.Army;
 import Game.Inventory;
+import Game.Items;
 
 public class PouzitLektvarRozzureni extends Command {
     private static Army army;
@@ -15,13 +16,11 @@ public class PouzitLektvarRozzureni extends Command {
 
     @Override
     public String execute() {
-        if (inventory.getItemsOwned().contains("LektvarRozzureni")) {
             army.bonusStrenght(1.10);
-            inventory.removeItem("LektvarRozzureni");
+            Items delete = inventory.findItem("lektvarrozzureni");
             System.out.println("Lektvar Rozzureni byl pouzit");
-        } else {
-            System.out.println("Lektvar Rozzureni neni v tvem inventari");
-        }
+            inventory.getItemsOwned().remove(delete);
+
         return "--------------------------------------------------------";
     }
 

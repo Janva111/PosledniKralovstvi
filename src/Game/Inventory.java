@@ -38,15 +38,18 @@ public class Inventory {
 
     }
 
-    public void addItem(Items item) {
-        itemsOwned.add(item);
+    public Items findItem(String itemName) {
+        for (Items items : itemsOwned) {
+            if (items.getNameOfItem().equalsIgnoreCase(itemName)) {
+                return items;
+            }
+        }
+        System.out.println("Tento item nemáš v inventáři.");
+        return null;
     }
 
-    // dopsat removeItem a add item
-    public void removeItem(String item) {
-        if (itemsOwned.contains(item)) {
-            itemsOwned.remove(item);
-        }
+    public void addBalance(int amount) {
+        balance += amount;
     }
 
     public int getBalance() {

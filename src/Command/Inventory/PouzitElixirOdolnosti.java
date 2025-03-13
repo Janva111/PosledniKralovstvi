@@ -3,6 +3,7 @@ package Command.Inventory;
 import Command.Command;
 import Game.Army;
 import Game.Inventory;
+import Game.Items;
 
 public class PouzitElixirOdolnosti extends Command {
     private static Army army;
@@ -15,13 +16,10 @@ public class PouzitElixirOdolnosti extends Command {
 
     @Override
     public String execute() {
-        if (inventory.getItemsOwned().contains("ElixirOdolnosti")) {
-            army.bonusDefense(1.10);
-            inventory.removeItem("ElixirOdolnosti");
-            System.out.println("Elixir Odolnosti byl pouzit");
-        } else {
-            System.out.println("Elixir Odolnosti neni v tvem inventari");
-        }
+        army.bonusDefense(1.20);
+        Items delete = inventory.findItem("elixirodolnosti");
+        System.out.println("Elixir Odolnosti byl pouzit");
+        inventory.getItemsOwned().remove(delete);
         return "--------------------------------------------------------";
     }
 

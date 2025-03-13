@@ -17,33 +17,42 @@ public class Trader {
             int generate = rand.nextInt(8) + 1;
             switch (generate) {
                 case 1:
-                    items.add(item.findItem("mec"));
+                    items.add(item.getItems().get("mec"));
                     break;
                 case 2:
-                    items.add(item.findItem("kopi"));
+                    items.add(item.getItems().get("kopi"));
                     break;
                 case 3:
-                    items.add(item.findItem("stit"));
+                    items.add(item.getItems().get("stit"));
                     break;
                 case 4:
-                    items.add(item.findItem("brneni"));
+                    items.add(item.getItems().get("brneni"));
                     break;
                 case 5:
-                    items.add(item.findItem("katapult"));
+                    items.add(item.getItems().get("katapult"));
                     break;
                 case 6:
-                    items.add(item.findItem("ozivovaciTotem"));
+                    items.add(item.getItems().get("ozivovacitotem"));
                     break;
                 case 7:
-                    items.add(item.findItem("lektvarRozzureni"));
+                    items.add(item.getItems().get("lektvarrozzureni"));
                     break;
                 case 8:
-                    items.add(item.findItem("elixirOdolnosti"));
+                    items.add(item.getItems().get("elixirodolnosti"));
                     break;
                 default:
                     break;
             }
         }
+    }
+
+    public Items findItem(String itemName) {
+        for (Items items : items) {
+            if (items.getNameOfItem().equalsIgnoreCase(itemName)) {
+                return items;
+            }
+        }
+        return null;
     }
 
     public void removeItems(){
