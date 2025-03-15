@@ -22,8 +22,6 @@ public class Bojovat extends Command {
         if (game.getCurrentCity().isTaken()==false){
 
 
-
-
         }else{
             System.out.println("Není pořeba bojovat ve městě, které jsi již osvobodil.");
         }

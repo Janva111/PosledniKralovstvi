@@ -18,6 +18,10 @@ public class City {
         this.health = health;
     }
 
+    public void setTaken(boolean taken) {
+        isTaken = taken;
+    }
+
     public boolean canMoveTo(String goTo) {
         return legalCities.contains(goTo);
     }

@@ -55,10 +55,9 @@ public class Trader {
         return null;
     }
 
-    public void removeItems(){
-        for (int i = 0; i < items.size(); i++) {
-            items.remove(i);
-        }
+
+    public void setItems(ArrayList<Items> items) {
+        this.items = items;
     }
 
     public ArrayList<Items> getItems() {

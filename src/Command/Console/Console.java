@@ -45,6 +45,7 @@ public class Console {
         mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory,army));
         mapOfCommands.put("pomoc", new Pomoc(game));
         mapOfCommands.put("rabovat", new Rabovat(game,inventory));
+        mapOfCommands.put("bojovat", new Bojovat(army, game, loadMap));
 
         // add commands
     }
@@ -61,7 +62,7 @@ public class Console {
             System.out.println(">> " + mapOfCommands.get(command).execute());
             exit = mapOfCommands.get(command).exit();
         } else {
-            System.out.println(">> Tento příkaz není v této hře.");
+            System.out.println(">> Tento příkaz není v této hře." + "\n" + "--------------------------------------------------------");
         }
     }
 
