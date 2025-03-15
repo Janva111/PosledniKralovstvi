@@ -43,17 +43,6 @@ public class Game {
             return;
         }
 
-          /*  if (loadMap.findCity("miradell").isTaken() == true) {
-                System.out.println("Uspěšně se ti podařilo sjednotit zemi Valtheris." + "\n" +
-                        "Tůj lid je na tebe pišný a celá země slaví." + "\n" +
-                        "Dobrá práce, už si jen užij svou slávu.");
-                System.exit(0);
-            }
-
-           */
-
-
-
         City startLocation = loadMap.findCity("hellas");
         if (startLocation == null) {
             System.out.println("Startovní lokace nebyla nalezena!");

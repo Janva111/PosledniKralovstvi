@@ -98,6 +98,15 @@ public class LoadMap {
         return null;
     }
 
+    public void controlWin(){
+        if (findCity("miradell").isTaken() == true) {
+            System.out.println("Uspěšně se ti podařilo sjednotit zemi Valtheris." + "\n" +
+                    "Tůj lid je na tebe pišný a celá země slaví." + "\n" +
+                    "Dobrá práce, už si jen užij svou slávu.");
+            System.exit(0);
+        }
+    }
+
     public HashMap<String, City> getCities() {
         return cities;
     }

@@ -1,9 +1,11 @@
 package Game;
 
+import Command.Others.Ukoncit;
+
 public class Army {
 
-    private int size = 0;
-    private double health;
+    private int size = 100;
+    private double lostHealth = 0.0;
     private double maxHealth;
     private double defense;
     private double strenght;
@@ -12,7 +14,13 @@ public class Army {
         setMaxHealthHealth();
         setDefense();
         setStrenght();
-        this.health = maxHealth;
+    }
+
+    public void controlHealt() {
+        if ((maxHealth - lostHealth) <= 0) {
+            System.out.println("Armada nemá životy. Tvá cesta je u konce.");
+            System.exit(0);
+        }
     }
 
     // upgrades
@@ -21,16 +29,17 @@ public class Army {
     }
 
     public void healing(double add) {
-        if ((health + add) > maxHealth) {
-            health += add;
+        if (((maxHealth - lostHealth) + add) > maxHealth) {
+            lostHealth -= add;
         } else {
-            health = maxHealth;
+            lostHealth = 0;
         }
     }
 
     public void bonusStrenght(double multiplier) {
         strenght = strenght * multiplier;
     }
+
     public void bonusMaxHealth(double multiplier) {
         maxHealth = maxHealth * multiplier;
     }
@@ -41,16 +50,17 @@ public class Army {
 
     // setters
 
+
+    public void setLostHealth(double lostHealth) {
+        this.lostHealth += lostHealth;
+    }
+
     public void setStrenght() {
         this.strenght = size * 10;
     }
 
     public void setMaxHealthHealth() {
         this.maxHealth = size * 15;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
     }
 
     public void setDefense() {
@@ -70,20 +80,20 @@ public class Army {
         return maxHealth;
     }
 
-    public double getHealth() {
-        return health;
-    }
-
     public double getDefense() {
         return defense;
+    }
+
+    public double getLostHealth() {
+        return lostHealth;
     }
 
     @Override
     public String toString() {
         return "{" +
-                ", velikost = " + size +
-                "síla = " + strenght +
-                ", životy = " + health +
+                "velikost = " + size +
+                ", síla = " + strenght +
+                ", životy = " + (maxHealth - lostHealth) +
                 ", obrana = " + defense +
                 '}';
     }

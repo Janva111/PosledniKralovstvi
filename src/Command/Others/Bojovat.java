@@ -17,6 +17,14 @@ public class Bojovat extends Command {
         this.loadMap = loadMap;
     }
 
+    /* commads to use
+
+    - army.controlHealt
+    - loadMap.controlWin
+    controlovat tyto dve veci po kazdem boji
+
+     */
+
     @Override
     public String execute() {
         if (game.getCurrentCity().isTaken()==false){
