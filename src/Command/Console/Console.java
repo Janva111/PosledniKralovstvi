@@ -39,10 +39,9 @@ public class Console {
         mapOfCommands.put("pouzit ozdravovaci totem", new PouzitOzdravovaciTotem(army, inventory));
         mapOfCommands.put("mluvit s obchodnikem", new MluvitSObchodnikem(trader, game));
         mapOfCommands.put("odejit od obchodnika", new OdejitOdObchodnika(trader));
-        mapOfCommands.put("osvobodit", new Osvobodit(game, army));
+        mapOfCommands.put("osvobodit", new Osvobodit(game, army,inventory));
         mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
-        mapOfCommands.put("pouzit itemy", new PouzitItemy(inventory,army));
         mapOfCommands.put("pomoc", new Pomoc(game));
         mapOfCommands.put("rabovat", new Rabovat(game,inventory));
         mapOfCommands.put("bojovat", new Bojovat(army, game, loadMap));

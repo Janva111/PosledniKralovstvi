@@ -35,7 +35,7 @@ public class Army {
         maxHealth = maxHealth * multiplier;
     }
 
-    public void biggerSize(int add) {
+    public void changeSize(int add) {
         size = size + add;
     }
 
