@@ -10,6 +10,11 @@ public class City {
     protected int strenght;
     protected int health;
 
+
+    public City(){
+
+    }
+
     public City(String name, int health, int strenght, boolean isTaken, ArrayList<String> legalCities) {
         this.name = name;
         this.legalCities = legalCities;
@@ -20,6 +25,10 @@ public class City {
 
     public void setTaken(boolean taken) {
         isTaken = taken;
+    }
+
+    public void setStrenght(int strenght) {
+        this.strenght = strenght;
     }
 
     public boolean canMoveTo(String goTo) {

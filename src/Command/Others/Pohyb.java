@@ -20,24 +20,23 @@ public class Pohyb extends Command {
 
     @Override
     public String execute() {
-        if (game.getCurrentCity().isTaken() == true) {
-            do {
                 if (game == null || loadMap == null) {
                     return "Hra nebyla správně inicializována!";
                 }
 
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Právě si ve městě: " + game.getCurrentCity().getName());
-                System.out.println("Počet životů nepřátelské armády: " + game.getCurrentCity().getHealth());
-                System.out.println("Síla nepřátelské armády" + game.getCurrentCity().getStrenght());
+                if (game.getCurrentCity().getStrenght() != 0) {
+                    System.out.println("Síla nepřátelské armády: " + game.getCurrentCity().getStrenght());
+                }
                 game.showAvailableMovements();
 
                 System.out.print("Kam si přeješ dále pokračovat? (napiš název lokace): ");
                 String input = scanner.nextLine().trim().toLowerCase();
 
-                City toGo = loadMap.findCity(input);
-                if (toGo == null) {
-                    return "Tato lokace neexistuje!";
+                City toGo = new City();
+                if (loadMap.findCity(input) != null) {
+                    toGo = loadMap.findCity(input);
                 }
 
                 if (game.move(toGo) == true) {
@@ -45,13 +44,9 @@ public class Pohyb extends Command {
                     System.out.println("Právě ses vypravil do města " + toGo.getName());
                     System.out.println("Uspěšně si dorazil do města " + toGo.getName());
                 } else {
-                    return "Touto cestou nelze jít";
+                    System.out.println("K tomuto místu žádná cesta nevede");
                 }
 
-            } while (firstMove);
-        }else {
-            System.out.println("Tuto možnost nelze provést. Město není obsazeno.");
-        }
         return "--------------------------------------------------------";
     }
 

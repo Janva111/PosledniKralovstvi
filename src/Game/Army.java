@@ -11,7 +11,7 @@ public class Army {
     private double strenght;
 
     public Army() {
-        setMaxHealthHealth();
+        setMaxHealth();
         setDefense();
         setStrenght();
     }
@@ -47,6 +47,9 @@ public class Army {
     public void changeSize(int add) {
         size = size + add;
     }
+    public void changeLostHealth(double add){
+       lostHealth = lostHealth + add;
+    }
 
     // setters
 
@@ -59,7 +62,7 @@ public class Army {
         this.strenght = size * 10;
     }
 
-    public void setMaxHealthHealth() {
+    public void setMaxHealth() {
         this.maxHealth = size * 15;
     }
 
@@ -93,8 +96,9 @@ public class Army {
         return "{" +
                 "velikost = " + size +
                 ", síla = " + strenght +
-                ", životy = " + (maxHealth - lostHealth) +
+                ", životy = " + (maxHealth - lostHealth) +"/"+maxHealth +
                 ", obrana = " + defense +
                 '}';
     }
+
 }

@@ -61,14 +61,14 @@ public class Game {
     }
 
     public boolean move(City toGo) {
-        if (currentCity.canMoveTo(toGo.getName())) {
+        if ((currentCity.canMoveTo(toGo.getName())&& currentCity.isTaken() == true ) || (currentCity.canMoveTo(toGo.getName()) && toGo.isTaken() == true)) {
             currentCity = toGo;
             return true;
         } else {
-            System.out.println("Jdes nekam co neexistuje :(");
             return false;
         }
     }
+
 
 
     public void setCurrentCity(City currentCity) {

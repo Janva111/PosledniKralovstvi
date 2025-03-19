@@ -26,7 +26,7 @@ public class Osvobodit extends Command {
             int size = rand.nextInt(100) + 100;
             army.changeSize(size);
             army.setDefense();
-            army.setMaxHealthHealth();
+            army.setMaxHealth();
             army.setStrenght();
             inventory.useItems(army);
             System.out.println("Osvobodil si " + size + " zajatých občanů země Valtheris.");

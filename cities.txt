@@ -1,5 +1,5 @@
-Hellas;1;1;true;Argolis;Sylvaria;
-Sylvaria;1;2;false;Nythrador;Solmora;Hellas
+Hellas;0;0;true;Argolis;Sylvaria;
+Sylvaria;1000;2000;false;Nythrador;Solmora;Hellas
 Solmora;1;2;false;Sylvaria;Nythrador
 Nythrador;1;1;false;Argolis;Delos;Miradell;Solmora
 Argolis;1;1;false;Nythrador;Lakedaimon;Hellas
