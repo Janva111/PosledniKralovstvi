@@ -1,7 +1,5 @@
 package Game;
 
-import Command.Others.Ukoncit;
-
 public class Army {
 
     private int size = 100;
@@ -52,7 +50,6 @@ public class Army {
     }
 
     // setters
-
 
     public void setLostHealth(double lostHealth) {
         this.lostHealth += lostHealth;

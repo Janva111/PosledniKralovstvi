@@ -27,6 +27,12 @@ public class Items {
         this.boost = boost;
     }
 
+
+
+    /**
+     * Constructor that loads items from a file named "items.txt".
+     * Reads the file line by line, parsing item attributes and storing them in collections.
+     */
     public Items() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("items.txt"));
@@ -55,6 +61,12 @@ public class Items {
         }
     }
 
+    /**
+     * Searches for an item by its name.
+     *
+     * @param itemName The name of the item to search for.
+     * @return The found item, or null if no match is found.
+     */
     public Items findItem(String itemName) {
             for (Items items : itemsList) {
                 if (items.getNameOfItem().equalsIgnoreCase(itemName)) {

@@ -12,6 +12,10 @@ public class Trader {
         this.item = item;
     }
 
+    /**
+     * Generates a random set of 4 items for the trader shop.
+     */
+
     public void generateItems() {
         for (int i = 0; i < 4; i++) {
             int generate = rand.nextInt(8) + 1;
@@ -46,6 +50,13 @@ public class Trader {
         }
     }
 
+
+    /**
+     * Searches for an item by its name.
+     *
+     * @param itemName The name of the item to search for.
+     * @return The found item, or null if the item is not found.
+     */
     public Items findItem(String itemName) {
         for (Items items : items) {
             if (items.getNameOfItem().equalsIgnoreCase(itemName)) {
@@ -60,13 +71,16 @@ public class Trader {
         this.items = items;
     }
 
+
     public ArrayList<Items> getItems() {
         return items;
     }
 
+
     public boolean isTalking() {
         return talking;
     }
+
 
     public void setTalking(boolean talking) {
         this.talking = talking;

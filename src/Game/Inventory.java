@@ -13,7 +13,14 @@ public class Inventory {
         itemsOwned = new ArrayList<>();
     }
 
-    // shromazdi vsechny boosty z itemu a vylepsi tim armadu
+    /**
+     * Go throw inventory and sort boosts of items.
+     * Count boosts of items.
+     * Add boosts to army.
+     *
+     * @param army The army to enhance using item boosts.
+     */
+
     public void useItems(Army army) {
         double strength = 0;
         double defence = 0;
@@ -23,20 +30,25 @@ public class Inventory {
                 case "strenght":
                     strength += itemsOwned.get(i).getBoost();
                     strength = (strength + 100) / 100;
-                    army.bonusStrenght(strength);
                 case "defence":
                     defence += itemsOwned.get(i).getBoost();
                     defence = (defence + 100) / 100;
-                    army.bonusDefense(defence);
                 case "health":
                     health += itemsOwned.get(i).getBoost();
                     health = (health + 100) / 100;
-                    army.bonusMaxHealth(health);
             }
         }
-
-
+        army.bonusStrenght(strength);
+        army.bonusDefense(defence);
+        army.bonusMaxHealth(health);
     }
+
+    /**
+     * Searches for an item by its name in the inventory.
+     *
+     * @param itemName The name of the item to search for.
+     * @return The found item, or null if not found.
+     */
 
     public Items findItem(String itemName) {
         for (Items items : itemsOwned) {

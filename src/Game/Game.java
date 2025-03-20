@@ -24,6 +24,14 @@ public class Game {
         this.currentCity = startingCity;
     }
 
+    /**
+     * Starts the game by initializing the game world, inventory, army, and trader.
+     * Print the starting text and commands for game.
+     * Loads the map and check if it was succesfull
+     * Sets the starting city.
+     * Invoke the console interface.
+     */
+
     public void startGame() {
         this.loadMap = new LoadMap();
         this.inventory = new Inventory();
@@ -31,18 +39,20 @@ public class Game {
         this.items = new Items();
         this.trader = new Trader(items);
 
-        // startovni text
+        // starting text
         System.out.println("Vítej ve hře POSLEDNÍ KRÁLOVSTVÍ");
         System.out.println("--------------------------------------------------------");
         Prikazy prikazy = new Prikazy();
         prikazy.execute();
         System.out.println("--------------------------------------------------------");
 
+        // Load map and check if it was successful
         if (!loadMap.loadMap()) {
             System.out.println("Load map failed");
             return;
         }
 
+        // create starting location
         City startLocation = loadMap.findCity("hellas");
         if (startLocation == null) {
             System.out.println("Startovní lokace nebyla nalezena!");
@@ -53,6 +63,10 @@ public class Game {
         console.start(army, inventory, trader, items, game, loadMap);
     }
 
+
+    /**
+     * Shows the available movements from the current city.
+     */
     public void showAvailableMovements() {
         System.out.println("Muzes jit:");
         for (String legalCities : currentCity.getLegalCities()) {
@@ -60,6 +74,12 @@ public class Game {
         }
     }
 
+    /**
+     * Moves the player to a new city if the movement is allowed.
+     *
+     * @param toGo The city to move to.
+     * @return true if the movement was successful, otherwise false.
+     */
     public boolean move(City toGo) {
         if ((currentCity.canMoveTo(toGo.getName())&& currentCity.isTaken() == true ) || (currentCity.canMoveTo(toGo.getName()) && toGo.isTaken() == true)) {
             currentCity = toGo;

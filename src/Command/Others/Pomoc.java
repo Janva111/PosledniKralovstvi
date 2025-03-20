@@ -20,7 +20,8 @@ public class Pomoc extends Command {
                     + "Osvobodit zajatce a narukovat je do své armády." + "\n"
                     + "ukPoužít itemy, aby tvá armáda byla vyzbrojena.");
         } else if (game.getCurrentCity().isTaken() == false) {
-            System.out.println("Jak tak vidím ještě si neopsadil toto město, tudíž pokud si připraven, ukaž co je v tobě a bojuj.");
+            System.out.println("Jak tak vidím ještě si neopsadil toto město, tudíž pokud si připraven, ukaž co je v tobě a bojuj."+ "\n"
+                    + "Také se můžeš vrátit do předešlích měst a vylepšit svou armádu.");
         }
         return "--------------------------------------------------------";
     }
