@@ -5,6 +5,10 @@ import Game.Army;
 import Game.Inventory;
 import Game.Items;
 
+/**
+ * Command to use a potion of rage to increase the army's strength.
+ * This command applies a strength bonus to the player's army and removes the potion from the inventory.
+ */
 public class PouzitLektvarRozzureni extends Command {
     private static Army army;
     private static Inventory inventory;
@@ -14,7 +18,12 @@ public class PouzitLektvarRozzureni extends Command {
         this.inventory = inventory;
     }
 
-    @Override
+    /**
+     * Executes the command to use a potion of rage on the army.
+     * The potion grants a 10% increase in the army's strength and removes the potion from the inventory.
+     *
+     * @return A string indicating the completion of the action.
+     */    @Override
     public String execute() {
             army.bonusStrenght(1.10);
             Items delete = inventory.findItem("lektvarrozzureni");

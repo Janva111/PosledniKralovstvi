@@ -3,6 +3,10 @@ package Game;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Represents a trader who possesses and sells various items.
+ */
+
 public class Trader {
     private ArrayList<Items> items = new ArrayList<>(4);
     private static Items item;

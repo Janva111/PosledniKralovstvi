@@ -7,6 +7,11 @@ import Game.Items;
 
 import java.util.Random;
 
+/**
+ * Command to loot items in the game.
+ * This command allows the player to loot a random item if the current city is occupied.
+ * The item is added to the player's inventory.
+ */
 public class Rabovat extends Command {
     private static Game game;
     private static Inventory inventory;
@@ -17,6 +22,14 @@ public class Rabovat extends Command {
         this.inventory = inventory;
     }
 
+    /**
+     * Executes the looting command.
+     * If the current city is occupied, a random item is added to the player's inventory.
+     * The item type is selected randomly from a predefined list of items.
+     * If the current city is not occupied, a message is displayed indicating looting is not possible.
+     *
+     * @return A string indicating the completion of the looting process.
+     */
     @Override
     public String execute() {
         if (game.getCurrentCity().isTaken() == true) {

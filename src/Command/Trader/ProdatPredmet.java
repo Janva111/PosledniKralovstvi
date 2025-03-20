@@ -7,6 +7,12 @@ import Game.Trader;
 
 import java.util.Scanner;
 
+/**
+ * Command for selling an item to the trader.
+ * This command allows the player to sell an item from their inventory if they are currently interacting with a trader.
+ * The player will receive half of the item's price upon successful sale.
+ */
+
 public class ProdatPredmet extends Command {
     private static Trader trader;
     private static Inventory inventory;
@@ -16,6 +22,13 @@ public class ProdatPredmet extends Command {
         this.inventory = inventory;
     }
 
+    /**
+     * Executes the command to sell an item from the player's inventory.
+     * If the player is talking to the trader, they can choose an item to sell.
+     * The item is removed from the inventory, and the player receives half of the item's price as balance.
+     *
+     * @return A message indicating the completion of the action.
+     */
     @Override
     public String execute() {
         if (trader.isTalking() == true){
@@ -39,6 +52,7 @@ public class ProdatPredmet extends Command {
         }
         return "--------------------------------------------------------";
     }
+
 
     @Override
     public boolean exit() {

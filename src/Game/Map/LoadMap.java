@@ -9,6 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The LoadMap class is responsible for loading the game map from a file.
+ * It creates city objects and establishes connections between them.
+ * It controls winnig of the game.
+ */
+
 public class LoadMap {
 
     public ArrayList<City> map = new ArrayList<>();
@@ -18,6 +24,12 @@ public class LoadMap {
     public LoadMap() {
         cities = new HashMap<>();
     }
+
+    /**
+     * Loads the city data from the "cities.txt" file and initializes the map.
+     *
+     * @return true if the map was loaded successfully, false otherwise.
+     */
 
     public boolean loadMap() {
         try {
@@ -66,6 +78,16 @@ public class LoadMap {
         }
     }
 
+    /**
+     * Creates a city instance based on its name.
+     *
+     * @param cityName The name of the city.
+     * @param strength The city's strength value.
+     * @param health The city's health value.
+     * @param isTaken Whether the city is currently taken.
+     * @param legalCities A list of cities where the player can go.
+     * @return A City object corresponding to the provided name, or null if the name is unknown.
+     */
     private City createCity(String cityName, int strength, int health, boolean isTaken, ArrayList<String> legalCities) {
         switch (cityName.toLowerCase()) {
             case "hellas":
@@ -89,6 +111,13 @@ public class LoadMap {
         }
     }
 
+    /**
+     * Finds and returns a city by its name.
+     *
+     * @param cityName The name of the city to find.
+     * @return The City object if found, otherwise null.
+     */
+
     public City findCity(String cityName) {
         for (City city : map) {
             if (city.name.equalsIgnoreCase(cityName)) {
@@ -97,6 +126,11 @@ public class LoadMap {
         }
         return null;
     }
+
+    /**
+     * Checks if the win condition is met (if the city "Miradell" is taken).
+     * If the condition is met, the game ends.
+     */
 
     public void controlWin(){
         if (findCity("miradell").isTaken() == true) {

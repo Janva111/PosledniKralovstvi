@@ -7,6 +7,11 @@ import Game.Inventory;
 
 import java.util.Random;
 
+/**
+ * Command to liberate citizens and recruit them into the player's army.
+ * This command can only be executed if the current city is taken (controlled).
+ * It recruits a random number of citizens, updates the player's army, and applies any available items.
+ */
 public class Osvobodit extends Command {
 
     private static Game game;
@@ -19,6 +24,13 @@ public class Osvobodit extends Command {
         this.inventory = inventory;
     }
 
+    /**
+     * Executes the liberation command. If the current city is taken, it recruits a random number of citizens,
+     * updates the army size, strength, defense, and health accordingly, and applies items from the inventory
+     * to improve the army. The player is notified of the number of citizens recruited.
+     *
+     * @return A string indicating the end of the operation and the number of citizens liberated.
+     */
     @Override
     public String execute() {
         if (game.getCurrentCity().isTaken() == true) {

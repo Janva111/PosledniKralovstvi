@@ -1,7 +1,5 @@
 package Game;
 
-import Game.Map.City;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,6 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+
+/**
+ * Represents an item with a name, price, type of boost, and boost value.
+ * Manages a collection of items loaded from a file.
+ * Give boosts for players army.
+ */
 
 public class Items {
     private String nameOfItem;

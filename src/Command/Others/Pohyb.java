@@ -7,6 +7,12 @@ import Game.Map.LoadMap;
 
 import java.util.Scanner;
 
+/**
+ * Command to handle player movement between cities on the map.
+ * This command allows the player to move to another city if it is accessible.
+ * It checks if the game is properly initialized, displays the current city's information,
+ * shows available movement options, and lets the player choose the next destination.
+ */
 public class Pohyb extends Command {
 
     private static Game game;
@@ -18,6 +24,15 @@ public class Pohyb extends Command {
         this.loadMap = loadMap;
     }
 
+    /**
+     * Executes the move command, allowing the player to select a destination city.
+     * It checks whether the game and map are initialized properly, displays the current city
+     * and enemy army strength, lists available movements, and processes the player's choice.
+     * If the player moves to a valid city, the movement is executed. If the city is not accessible,
+     * the player is informed that no path exists.
+     *
+     * @return A string indicating the end of the movement operation and the result.
+     */
     @Override
     public String execute() {
                 if (game == null || loadMap == null) {

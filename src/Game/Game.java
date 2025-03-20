@@ -5,6 +5,13 @@ import Command.Others.Prikazy;
 import Game.Map.City;
 import Game.Map.LoadMap;
 
+/**
+ * Represents the main game logic, including managing the game world.
+ * Handling the player's inventory, army, and interactions within the game.
+ * Control loading of map.
+ * Contains movement.
+ */
+
 public class Game {
 
     private City currentCity;

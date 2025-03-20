@@ -2,6 +2,10 @@ package Game.Map;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a city in the game world.
+ * Each city has a name, strength, health, if its taken, list of cities that are connected.
+ */
 public class City {
 
     protected String name;

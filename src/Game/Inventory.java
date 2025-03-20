@@ -2,6 +2,10 @@ package Game;
 
 import java.util.ArrayList;
 
+/**
+ * Represents an inventory that holds items and manages a player's balance.
+ */
+
 public class Inventory {
     private int balance;
     private ArrayList<Items> itemsOwned;
