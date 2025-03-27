@@ -58,19 +58,23 @@ public class Inventory {
             switch (itemsOwned.get(i).getTypeOfBoost()) {
                 case "strenght":
                     strength += itemsOwned.get(i).getBoost();
-                    strength = (strength + 100) / 100;
                 case "defence":
                     defence += itemsOwned.get(i).getBoost();
-                    defence = (defence + 100) / 100;
+
                 case "health":
                     health += itemsOwned.get(i).getBoost();
-                    health = (health + 100) / 100;
+
             }
         }
-        army.bonusStrenght(strength);
-        army.bonusDefense(defence);
-        army.bonusMaxHealth(health);
-        return true;
+        if (strength!=0 && defence!=0 && health!=0) {
+            strength = (strength + 100) / 100;
+            defence = (defence + 100) / 100;
+            health = (health + 100) / 100;
+            army.bonusStrenght(strength);
+            army.bonusDefense(defence);
+            army.bonusMaxHealth(health);
+        }
+            return true;
     }
 
     /**

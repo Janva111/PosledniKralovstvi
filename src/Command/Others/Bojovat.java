@@ -16,12 +16,16 @@ import java.util.Random;
  */
 public class Bojovat extends Command {
 
-    private static Army army;
-    private static Game game;
-    private static LoadMap loadMap;
+    private Army army;
+    private Game game;
+    private LoadMap loadMap;
 
     private static Inventory inventory;
     private Random random = new Random();
+
+
+    private boolean control;
+
 
     public Bojovat(Army army, Game game, LoadMap loadMap, Inventory inventory) {
         this.army = army;
@@ -52,19 +56,21 @@ public class Bojovat extends Command {
                         "Dobrá práce, jen tak dál, už jsi o krok blíže k svému úspěchu.");
                 int lost = random.nextInt(4)+11;
                 army.changeSize(-1*(army.getSize()/lost));
-                army.setStrenght();
+                army.setDefense();
                 army.setMaxHealth();
-                inventory.useItems(army);// Apply inventory items to the army
-                army.changeLostHealth(lost*10);
-                army.controlHealtEnding();// Check army health\
+                army.setStrenght();
+               //inventory.useItems(army);// Apply inventory items to the army
+                army.changeLostHealth(lost*30);
+                //army.controlHealtEnding();// Check army health\
             }else{
                 // Failure: the army is not strong enough
                 System.out.println("Nepodařilo se ti to a tvá armáda utrpěla velké ztráty. Doporučuji se stáhnout a lépe se připravit.");
                 int lost = random.nextInt(3)+4;
                 army.changeSize(-1*(army.getSize()/lost));
-                army.setStrenght();
+                army.setDefense();
                 army.setMaxHealth();
-                inventory.useItems(army);// Apply inventory items to the army
+                army.setStrenght();
+               // inventory.useItems(army);// Apply inventory items to the army
                 army.changeLostHealth(lost*10);
                 army.controlHealtEnding();// Check army health
             }
@@ -74,6 +80,9 @@ public class Bojovat extends Command {
         return "--------------------------------------------------------";
     }
 
+    public Army getArmy() {
+        return army;
+    }
     @Override
     public boolean exit() {
         return false;

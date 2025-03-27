@@ -27,7 +27,6 @@ public class Army {
         setStrenght();
     }
 
-
     /**
      * Loads the starting army size from the "army.txt" file and initializes the map.
      *
@@ -68,7 +67,7 @@ public class Army {
      * @param multiplier The multiplier to apply to the defense.
      */
     public void bonusDefense(double multiplier) {
-        defense = defense * multiplier;
+        defense *= multiplier;
     }
 
     /**
@@ -90,7 +89,7 @@ public class Army {
      * @param multiplier The multiplier to apply to the strength.
      */
     public void bonusStrenght(double multiplier) {
-        strenght = strenght * multiplier;
+        strenght *= multiplier;
     }
 
     /**
@@ -99,7 +98,7 @@ public class Army {
      * @param multiplier The multiplier to apply to the max health.
      */
     public void bonusMaxHealth(double multiplier) {
-        maxHealth = maxHealth * multiplier;
+        maxHealth *= multiplier;
     }
 
     /**
