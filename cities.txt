@@ -1,8 +1,8 @@
-Hellas;0;0;true;Argolis;Sylvaria;
-Sylvaria;1000;2000;false;Nythrador;Solmora;Hellas
-Solmora;1;2;false;Sylvaria;Nythrador
-Nythrador;1;1;false;Argolis;Delos;Miradell;Solmora
-Argolis;1;1;false;Nythrador;Lakedaimon;Hellas
-Lakedaimon;1;1;false;Delos;Argolis
-Delos;1;1;false;Nythrador;Lakedaimon;Miradell
-Miradell;1;1;false;Nythrador;Delos
+Hellas;0;true;Argolis;Sylvaria;
+Sylvaria;960;false;Nythrador;Solmora;Hellas
+Solmora;4000;false;Sylvaria;Nythrador
+Nythrador;5000;false;Argolis;Delos;Miradell;Solmora
+Argolis;960;false;Nythrador;Lakedaimon;Hellas
+Lakedaimon;4500;false;Delos;Argolis
+Delos;10000;false;Nythrador;Lakedaimon;Miradell
+Miradell;15000;false;Nythrador;Delos

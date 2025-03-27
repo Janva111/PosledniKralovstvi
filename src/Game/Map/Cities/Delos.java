@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * This class extends atributes from class city
  */
 public class Delos extends City {
-    public Delos(String name, int strenght, int health, boolean isTaken, ArrayList<String> legalCities) {
-        super(name, strenght, health, isTaken, legalCities);
+    public Delos(String name, int strenght, boolean isTaken, ArrayList<String> legalCities) {
+        super(name, strenght, isTaken, legalCities);
     }
 }

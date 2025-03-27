@@ -12,19 +12,17 @@ public class City {
     protected ArrayList<String> legalCities;
     protected boolean isTaken;
     protected int strenght;
-    protected int health;
 
 
     public City(){
 
     }
 
-    public City(String name, int health, int strenght, boolean isTaken, ArrayList<String> legalCities) {
+    public City(String name, int strenght, boolean isTaken, ArrayList<String> legalCities) {
         this.name = name;
         this.legalCities = legalCities;
         this.strenght = strenght;
         this.isTaken = isTaken;
-        this.health = health;
     }
 
     public void setTaken(boolean taken) {
@@ -49,10 +47,6 @@ public class City {
 
     public int getStrenght() {
         return strenght;
-    }
-
-    public int getHealth() {
-        return health;
     }
 
     public boolean isTaken() {

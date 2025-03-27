@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * This class extends atributes from class city
  */
 public class Miradell extends City {
-    public Miradell(String name, int strenght, int health, boolean isTaken, ArrayList<String> legalCities) {
-        super(name, strenght, health, isTaken, legalCities);
+    public Miradell(String name, int strenght, boolean isTaken, ArrayList<String> legalCities) {
+        super(name, strenght, isTaken, legalCities);
     }
 
 }
