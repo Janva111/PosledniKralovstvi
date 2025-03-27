@@ -72,12 +72,6 @@ public class Game {
             return false;
         }
 
-        // Load starting army size and check if it was successful
-        if (!army.loadArmy()) {
-            System.out.println("Load army failed");
-            return false;
-        }
-
         // Load starting balance and check if it was successful
         if (!inventory.loadBalance()){
             System.out.println("Load inventory failed");

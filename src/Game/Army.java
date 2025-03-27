@@ -19,6 +19,9 @@ public class Army {
     private double strenght;
 
     public Army() {
+        if (!loadArmy()) {
+            System.out.println("Load army failed");
+        }
         setMaxHealth();
         setDefense();
         setStrenght();
