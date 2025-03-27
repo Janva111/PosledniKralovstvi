@@ -1,5 +1,9 @@
 package Game;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -13,8 +17,29 @@ public class Inventory {
 
 
     public Inventory() {
-        this.balance = 0;
         itemsOwned = new ArrayList<>();
+    }
+
+    /**
+     * Loads the starting balance from the "balance.txt" file and initializes the map.
+     *
+     * @return true if the map was loaded successfully, false otherwise.
+     */
+    public boolean loadBalance(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("balance.txt"));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                balance = Integer.parseInt(line);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     /**
@@ -25,7 +50,7 @@ public class Inventory {
      * @param army The army to enhance using item boosts.
      */
 
-    public void useItems(Army army) {
+    public boolean useItems(Army army) {
         double strength = 0;
         double defence = 0;
         double health = 0;
@@ -45,6 +70,7 @@ public class Inventory {
         army.bonusStrenght(strength);
         army.bonusDefense(defence);
         army.bonusMaxHealth(health);
+        return true;
     }
 
     /**

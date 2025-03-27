@@ -1,24 +1,42 @@
 package Test;
 
+import Game.Game;
+import Game.Map.City;
+import Game.Map.LoadMap;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-    /*
-        assertNotEquals() - Zkontroluje, zda 2 hodnoty nejsou stejné.
-        assertNotNull() - Zkontroluje, zda hodnota není null.
-        assertNotSame() - Zkontroluje, zda 2 reference neukazují na stejný objekt.
-        assertFalse() - Zkontroluje, zda je hodnota false.
-    */
+
+
+    private Game game;
+    private LoadMap loadMap;
+
+    @BeforeEach
+    void setUp() {
+        loadMap = new LoadMap();
+        loadMap.loadMap();
+        City city = loadMap.findCity("Hellas");
+        game = new Game(city);
+    }
+
+    /**
+     *Controls correct startGame
+     *Comment line 74 in class Game (console.start(army, inventory, trader, items, game, loadMap);)
+     */
 
     @Test
     void startGame() {
-    }
-
-    @Test
-    void showAvailableMovements() {
+        game.startGame();
+        assertTrue(game.startGame());
     }
 
     @Test
     void move() {
+        game.setCurrentCity(loadMap.findCity("Hellas"));
+        City cityToGo = loadMap.findCity("Argolis");
+        game.move(cityToGo);
+        assertTrue(game.move(cityToGo));
     }
 }

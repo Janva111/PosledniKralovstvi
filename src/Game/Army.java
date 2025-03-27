@@ -1,5 +1,10 @@
 package Game;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * Represents an army with attributes strength, defense, health, and size.
  * The army can receive upgrades, heal, and take damage.
@@ -7,7 +12,7 @@ package Game;
 
 public class Army {
 
-    private int size = 100;
+    private int size;
     private double lostHealth = 0.0;
     private double maxHealth;
     private double defense;
@@ -17,6 +22,28 @@ public class Army {
         setMaxHealth();
         setDefense();
         setStrenght();
+    }
+
+    /**
+     * Loads the starting army size from the "army.txt" file and initializes the map.
+     *
+     * @return true if the map was loaded successfully, false otherwise.
+     */
+    public boolean loadArmy(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("army.txt"));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                size = Integer.parseInt(line);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     /**

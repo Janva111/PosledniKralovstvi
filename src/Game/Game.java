@@ -22,6 +22,7 @@ public class Game {
     private Trader trader;
     private Items items;
     private Game game;
+    private boolean isRunning;
 
     public Game() {
 
@@ -29,17 +30,23 @@ public class Game {
 
     public Game(City startingCity) {
         this.currentCity = startingCity;
+        this.isRunning = false;
     }
 
     /**
      * Starts the game by initializing the game world, inventory, army, and trader.
      * Print the starting text and commands for game.
      * Loads the map and check if it was succesfull
+     * Load items and check if it was successful
+     * Load starting army size and check if it was successful
+     * Load starting balance and check if it was successful
      * Sets the starting city.
      * Invoke the console interface.
+     *
+     * @return
      */
 
-    public void startGame() {
+    public boolean startGame() {
         this.loadMap = new LoadMap();
         this.inventory = new Inventory();
         this.army = new Army();
@@ -56,18 +63,38 @@ public class Game {
         // Load map and check if it was successful
         if (!loadMap.loadMap()) {
             System.out.println("Load map failed");
-            return;
+            return false;
+        }
+
+        // Load items and check if it was successful
+        if (!items.loadItems()){
+            System.out.println("Load items failed");
+            return false;
+        }
+
+        // Load starting army size and check if it was successful
+        if (!army.loadArmy()) {
+            System.out.println("Load army failed");
+            return false;
+        }
+
+        // Load starting balance and check if it was successful
+        if (!inventory.loadBalance()){
+            System.out.println("Load inventory failed");
+            return false;
         }
 
         // create starting location
         City startLocation = loadMap.findCity("hellas");
         if (startLocation == null) {
             System.out.println("Startovní lokace nebyla nalezena!");
-            return;
+            return false;
         }
+
         this.game = new Game(startLocation);
         Console console = new Console();
         console.start(army, inventory, trader, items, game, loadMap);
+        return true;
     }
 
 
@@ -91,9 +118,8 @@ public class Game {
         if ((currentCity.canMoveTo(toGo.getName())&& currentCity.isTaken() == true ) || (currentCity.canMoveTo(toGo.getName()) && toGo.isTaken() == true)) {
             currentCity = toGo;
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
 
@@ -104,5 +130,29 @@ public class Game {
 
     public City getCurrentCity() {
         return currentCity;
+    }
+
+    public boolean isRunning() {
+        return isRunning;
+    }
+
+    public Items getItems() {
+        return items;
+    }
+
+    public Trader getTrader() {
+        return trader;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public Army getArmy() {
+        return army;
+    }
+
+    public LoadMap getLoadMap() {
+        return loadMap;
     }
 }

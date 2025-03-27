@@ -33,11 +33,15 @@ public class Items {
 
 
 
+
+    public Items() {
+    }
+
     /**
-     * Constructor that loads items from a file named "items.txt".
+     * Loads items from a file named "items.txt".
      * Reads the file line by line, parsing item attributes and storing them in collections.
      */
-    public Items() {
+    public boolean loadItems() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("items.txt"));
             String line;
@@ -63,6 +67,7 @@ public class Items {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return true;
     }
 
     /**
@@ -119,6 +124,10 @@ public class Items {
 
     public void setItems(HashMap<String, Items> items) {
         this.items = items;
+    }
+
+    public ArrayList<Items> getItemsList() {
+        return itemsList;
     }
 
     @Override

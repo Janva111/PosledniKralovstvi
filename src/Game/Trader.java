@@ -20,7 +20,7 @@ public class Trader {
      * Generates a random set of 4 items for the trader shop.
      */
 
-    public void generateItems() {
+    public boolean generateItems() {
         for (int i = 0; i < 4; i++) {
             int generate = rand.nextInt(8) + 1;
             switch (generate) {
@@ -52,6 +52,7 @@ public class Trader {
                     break;
             }
         }
+        return true;
     }
 
 
