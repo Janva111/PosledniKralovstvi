@@ -79,7 +79,7 @@ public class Game {
         }
 
         // create starting location
-        City startLocation = loadMap.findCity("Argolis");
+        City startLocation = loadMap.findCity("Hellas");
         if (startLocation == null) {
             System.out.println("Startovní lokace nebyla nalezena!");
             return false;
