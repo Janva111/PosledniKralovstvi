@@ -9,9 +9,10 @@ import java.util.Random;
 
 public class Trader {
     private ArrayList<Items> items = new ArrayList<>(4);
-    private static Items item;
+    private Items item;
     private boolean talking = false;
     private Random rand = new Random();
+
     public Trader(Items item) {
         this.item = item;
     }
@@ -71,6 +72,10 @@ public class Trader {
         return null;
     }
 
+    public void deleteItem() {
+        this.items = null;
+        this.items = new ArrayList<>();
+    }
 
     public void setItems(ArrayList<Items> items) {
         this.items = items;

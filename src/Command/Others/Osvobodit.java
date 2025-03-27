@@ -14,9 +14,9 @@ import java.util.Random;
  */
 public class Osvobodit extends Command {
 
-    private static Game game;
-    private static Army army;
-    private static Inventory inventory;
+    private Game game;
+    private Army army;
+    private Inventory inventory;
 
     public Osvobodit(Game game, Army army, Inventory inventory) {
         this.game = game;

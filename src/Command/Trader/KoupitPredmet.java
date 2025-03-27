@@ -13,8 +13,8 @@ import java.util.Scanner;
  * if the player is currently talking to the trader.
  */
 public class KoupitPredmet extends Command {
-    private static Trader trader;
-    private static Inventory inventory;
+    private Trader trader;
+    private Inventory inventory;
 
     public KoupitPredmet(Trader trader, Inventory inventory) {
         this.trader = trader;
@@ -40,6 +40,7 @@ public class KoupitPredmet extends Command {
             if (changingItem != null) {
                 trader.getItems().remove(changingItem);
                 inventory.getItemsOwned().add(changingItem);
+                inventory.addBalance(-1 * changingItem.getPrice());
             }else {
                 System.out.println("Tento item neexistuje" + "\n"
                         + "--------------------------------------------------------");

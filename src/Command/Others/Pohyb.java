@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class Pohyb extends Command {
 
-    private static Game game;
-    private static LoadMap loadMap;
+    private Game game;
+    private LoadMap loadMap;
     private boolean firstMove = true;
 
     public Pohyb(Game game, LoadMap loadMap) {

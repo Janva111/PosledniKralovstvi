@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * and updates the state to reflect that the player is no longer talking to the trader.
  */
 public class OdejitOdObchodnika extends Command {
-    private static Trader trader;
+    private Trader trader;
 
     public OdejitOdObchodnika (Trader trader){
         this.trader = trader;
@@ -29,7 +29,7 @@ public class OdejitOdObchodnika extends Command {
     public String execute() {
         if (trader.isTalking()){
             trader.setTalking(false);
-            trader.setItems(new ArrayList<>());
+            trader.deleteItem();
             System.out.println("Odešel jsi od obchodníka.");
         }else {
             System.out.println("Nelze odejit od obchodnika, když s ním nemluvíš.");

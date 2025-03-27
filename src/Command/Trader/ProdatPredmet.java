@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 
 public class ProdatPredmet extends Command {
-    private static Trader trader;
-    private static Inventory inventory;
+    private Trader trader;
+    private Inventory inventory;
 
     public ProdatPredmet(Trader trader, Inventory inventory) {
         this.trader = trader;

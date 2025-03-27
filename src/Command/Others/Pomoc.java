@@ -9,7 +9,7 @@ import Game.Game;
  * such as whether the player controls the current city.
  */
 public class Pomoc extends Command {
-    private static Game game;
+    private Game game;
 
     public Pomoc(Game game) {
         this.game = game;

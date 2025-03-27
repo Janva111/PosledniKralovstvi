@@ -13,13 +13,14 @@ import java.util.Random;
  * The item is added to the player's inventory.
  */
 public class Rabovat extends Command {
-    private static Game game;
-    private static Inventory inventory;
-    private static Items item;
+    private Game game;
+    private Inventory inventory;
+    private Items items;
 
-    public Rabovat(Game game, Inventory inventory) {
+    public Rabovat(Game game, Inventory inventory, Items items) {
         this.game = game;
         this.inventory = inventory;
+        this.items  = items;
     }
 
     /**
@@ -34,35 +35,38 @@ public class Rabovat extends Command {
     public String execute() {
         if (game.getCurrentCity().isTaken() == true) {
             Random rand = new Random();
-            int generate = rand.nextInt(8) + 1;
-            switch (generate) {
-                case 1:
-                    inventory.getItemsOwned().add(item.getItems().get("mec"));
-                    break;
-                case 2:
-                    inventory.getItemsOwned().add(item.getItems().get("kopi"));
-                    break;
-                case 3:
-                    inventory.getItemsOwned().add(item.getItems().get("stit"));
-                    break;
-                case 4:
-                    inventory.getItemsOwned().add(item.getItems().get("brneni"));
-                    break;
-                case 5:
-                    inventory.getItemsOwned().add(item.getItems().get("katapult"));
-                    break;
-                case 6:
-                    inventory.getItemsOwned().add(item.getItems().get("ozivovacitotem"));
-                    break;
-                case 7:
-                    inventory.getItemsOwned().add(item.getItems().get("lektvarrozzureni"));
-                    break;
-                case 8:
-                    inventory.getItemsOwned().add(item.getItems().get("elixirodolnosti"));
-                    break;
-                default:
-                    break;
+            for (int i = 0; i < rand.nextInt(2)+1; i++){
+                int generate = rand.nextInt(8) + 1;
+                switch (generate) {
+                    case 1:
+                        inventory.getItemsOwned().add(items.getItems().get("mec"));
+                        break;
+                    case 2:
+                        inventory.getItemsOwned().add(items.getItems().get("kopi"));
+                        break;
+                    case 3:
+                        inventory.getItemsOwned().add(items.getItems().get("stit"));
+                        break;
+                    case 4:
+                        inventory.getItemsOwned().add(items.getItems().get("brneni"));
+                        break;
+                    case 5:
+                        inventory.getItemsOwned().add(items.getItems().get("katapult"));
+                        break;
+                    case 6:
+                        inventory.getItemsOwned().add(items.getItems().get("ozivovacitotem"));
+                        break;
+                    case 7:
+                        inventory.getItemsOwned().add(items.getItems().get("lektvarrozzureni"));
+                        break;
+                    case 8:
+                        inventory.getItemsOwned().add(items.getItems().get("elixirodolnosti"));
+                        break;
+                    default:
+                        break;
+                }
             }
+            System.out.println("Právě si vyraboval část města.");
         }else {
             System.out.println("Nelze rabovat v neobsayeném městě.");
         }

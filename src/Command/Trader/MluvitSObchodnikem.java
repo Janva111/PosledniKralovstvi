@@ -10,8 +10,8 @@ import Game.Trader;
  * It generates items for sale and displays the trader's offer.
  */
 public class MluvitSObchodnikem extends Command {
-    private static Trader trader;
-    private static Game game;
+    private Trader trader;
+    private Game game;
 
     public MluvitSObchodnikem(Trader trader, Game game) {
         this.trader = trader;

@@ -60,7 +60,7 @@ public class Console {
         mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
         mapOfCommands.put("pomoc", new Pomoc(game));
-        mapOfCommands.put("rabovat", new Rabovat(game,inventory));
+        mapOfCommands.put("rabovat", new Rabovat(game,inventory,items));
         mapOfCommands.put("bojovat", new Bojovat(army, game, loadMap, inventory));
 
         // add commands
