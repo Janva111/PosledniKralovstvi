@@ -27,6 +27,7 @@ public class Army {
         setStrenght();
     }
 
+
     /**
      * Loads the starting army size from the "army.txt" file and initializes the map.
      *
