@@ -36,7 +36,7 @@ class GameTest {
     void move() {
         game.setCurrentCity(loadMap.findCity("Hellas"));
         City cityToGo = loadMap.findCity("Argolis");
-        game.move(cityToGo);
-        assertTrue(game.move(cityToGo));
+        boolean test = game.move(cityToGo);
+        assertEquals(test, true);
     }
 }
