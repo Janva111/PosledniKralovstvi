@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Inventory {
     private int balance;
     private ArrayList<Items> itemsOwned;
+    public static String statrtingBalance = "balance.txt";
 
 
 
@@ -27,7 +28,7 @@ public class Inventory {
      */
     public boolean loadBalance(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("balance.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(statrtingBalance));
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -63,7 +64,7 @@ public class Inventory {
 
                 case "health":
                     health += itemsOwned.get(i).getBoost();
-
+                default:
             }
         }
         if (strength!=0 && defence!=0 && health!=0) {

@@ -20,12 +20,8 @@ public class Bojovat extends Command {
     private Game game;
     private LoadMap loadMap;
 
-    private static Inventory inventory;
+    private Inventory inventory;
     private Random random = new Random();
-
-
-    private boolean control;
-
 
     public Bojovat(Army army, Game game, LoadMap loadMap, Inventory inventory) {
         this.army = army;
@@ -59,9 +55,9 @@ public class Bojovat extends Command {
                 army.setDefense();
                 army.setMaxHealth();
                 army.setStrenght();
-               //inventory.useItems(army);// Apply inventory items to the army
-                army.changeLostHealth(lost*30);
-                //army.controlHealtEnding();// Check army health\
+               inventory.useItems(army);// Apply inventory items to the army
+                army.changeLostHealth(lost*40);
+                army.controlHealtEnding();// Check army health\
             }else{
                 // Failure: the army is not strong enough
                 System.out.println("Nepodařilo se ti to a tvá armáda utrpěla velké ztráty. Doporučuji se stáhnout a lépe se připravit.");
@@ -70,8 +66,8 @@ public class Bojovat extends Command {
                 army.setDefense();
                 army.setMaxHealth();
                 army.setStrenght();
-               // inventory.useItems(army);// Apply inventory items to the army
-                army.changeLostHealth(lost*10);
+                inventory.useItems(army);// Apply inventory items to the army
+                army.changeLostHealth(lost*100);
                 army.controlHealtEnding();// Check army health
             }
         }else{

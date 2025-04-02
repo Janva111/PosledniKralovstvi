@@ -10,8 +10,8 @@ import Game.Items;
  * This command applies a strength bonus to the player's army and removes the potion from the inventory.
  */
 public class PouzitLektvarRozzureni extends Command {
-    private static Army army;
-    private static Inventory inventory;
+    private Army army;
+    private Inventory inventory;
 
     public PouzitLektvarRozzureni(Army army, Inventory inventory) {
         this.army = army;
@@ -25,7 +25,7 @@ public class PouzitLektvarRozzureni extends Command {
      * @return A string indicating the completion of the action.
      */    @Override
     public String execute() {
-            army.bonusStrenght(1.10);
+            army.bonusStrenght(1.50);
             Items delete = inventory.findItem("lektvarrozzureni");
             System.out.println("Lektvar Rozzureni byl pouzit");
             inventory.getItemsOwned().remove(delete);

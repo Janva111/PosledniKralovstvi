@@ -4,6 +4,7 @@ import Command.Command;
 import Game.Game;
 import Game.Inventory;
 import Game.Items;
+import Game.Army;
 
 import java.util.Random;
 
@@ -16,11 +17,13 @@ public class Rabovat extends Command {
     private Game game;
     private Inventory inventory;
     private Items items;
+    private Army army;
 
-    public Rabovat(Game game, Inventory inventory, Items items) {
+    public Rabovat(Game game, Inventory inventory, Items items,Army army) {
         this.game = game;
         this.inventory = inventory;
         this.items  = items;
+        this.army = army;
     }
 
     /**
@@ -66,6 +69,7 @@ public class Rabovat extends Command {
                         break;
                 }
             }
+            inventory.useItems(army);
             System.out.println("Právě si vyraboval část města.");
         }else {
             System.out.println("Nelze rabovat v neobsayeném městě.");

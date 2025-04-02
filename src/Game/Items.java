@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 /**
  * Represents an item with a name, price, type of boost, and boost value.
@@ -21,8 +20,7 @@ public class Items {
     private int boost;
     private HashMap<String, Items> items = new HashMap<String, Items>();
     private ArrayList<Items> itemsList = new ArrayList<Items>();
-    ;
-    Random rand = new Random();
+    public static String loadItems = "items.txt";
 
     public Items(String nameOfItem, int price, String typeOfBoost, int boost) {
         this.nameOfItem = nameOfItem;
@@ -43,7 +41,7 @@ public class Items {
      */
     public boolean loadItems() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("items.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(loadItems));
             String line;
 
             while ((line = br.readLine()) != null) {

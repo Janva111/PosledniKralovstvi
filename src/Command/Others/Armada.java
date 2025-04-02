@@ -9,7 +9,7 @@ import Game.Army;
  * This command allows the player to view the details of their army, including its size, strength, and other attributes.
  */
 public class Armada extends Command {
-    private static Army army;
+    private Army army;
 
     public Armada(Army army) {
         this.army = army;

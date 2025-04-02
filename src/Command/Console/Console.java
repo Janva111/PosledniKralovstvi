@@ -23,12 +23,12 @@ import java.util.Scanner;
  */
 public class Console {
 
-    private static Army army;
-    private static Inventory inventory;
-    private static Trader trader;
-    private static Items items;
-    private static Game game;
-    private static LoadMap loadMap;
+    private Army army;
+    private Inventory inventory;
+    private Trader trader;
+    private Items items;
+    private Game game;
+    private LoadMap loadMap;
 
     private boolean exit = false;
     private HashMap<String, Command> mapOfCommands = new HashMap<>();
@@ -60,7 +60,7 @@ public class Console {
         mapOfCommands.put("koupit predmet", new KoupitPredmet(trader, inventory));
         mapOfCommands.put("prodat predmet", new ProdatPredmet(trader, inventory));
         mapOfCommands.put("pomoc", new Pomoc(game));
-        mapOfCommands.put("rabovat", new Rabovat(game,inventory,items));
+        mapOfCommands.put("rabovat", new Rabovat(game,inventory,items,army));
         mapOfCommands.put("bojovat", new Bojovat(army, game, loadMap, inventory));
 
         // add commands

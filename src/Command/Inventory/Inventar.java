@@ -8,7 +8,7 @@ import Game.Inventory;
  * This command outputs the current state of the player's inventory to the console.
  */
 public class Inventar extends Command {
-    private static Inventory inventory;
+    private Inventory inventory;
 
     public Inventar(Inventory inventory) {
         this.inventory = inventory;

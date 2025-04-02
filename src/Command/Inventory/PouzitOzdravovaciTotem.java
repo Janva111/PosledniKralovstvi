@@ -5,13 +5,16 @@ import Game.Army;
 import Game.Inventory;
 import Game.Items;
 
+import java.util.Random;
+
 /**
  * Command to use a healing totem on the player's army.
  * This command allows the player to use a healing totem to restore health to their army.
  */
 public class PouzitOzdravovaciTotem extends Command {
-    private static Army army;
-    private static Inventory inventory;
+    private Army army;
+    private Inventory inventory;
+    private Random rand = new Random();
 
     public PouzitOzdravovaciTotem(Army army, Inventory inventory) {
         this.army = army;
@@ -27,7 +30,8 @@ public class PouzitOzdravovaciTotem extends Command {
      */
     @Override
     public String execute() {
-        army.healing(500);
+        int health = rand.nextInt(200)+500;
+        army.healing(health);
         Items delete = inventory.findItem("ozdravovacitotem");
         System.out.println("Ozdravovací Totem byl pouzit");
         inventory.getItemsOwned().remove(delete);

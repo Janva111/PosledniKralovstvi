@@ -17,6 +17,7 @@ public class Army {
     private double maxHealth;
     private double defense;
     private double strenght;
+    public static String startingSize = "army.txt";
 
     public Army() {
         if (!loadArmy()) {
@@ -34,7 +35,7 @@ public class Army {
      */
     public boolean loadArmy(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("army.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(startingSize));
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -76,7 +77,7 @@ public class Army {
      * @param add The amount of health to restore.
      */
     public void healing(double add) {
-        if (((maxHealth - lostHealth) + add) > maxHealth) {
+        if (((maxHealth - lostHealth)) > maxHealth) {
             lostHealth -= add;
         } else {
             lostHealth = 0;

@@ -10,8 +10,8 @@ import Game.Items;
  * This command applies a defense bonus to the player's army and removes the elixir from the inventory.
  */
 public class PouzitElixirOdolnosti extends Command {
-    private static Army army;
-    private static Inventory inventory;
+    private Army army;
+    private Inventory inventory;
 
     public PouzitElixirOdolnosti(Army army, Inventory inventory) {
         this.army = army;
